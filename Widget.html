@@ -1,0 +1,349 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-red alert-full" id="errorAlert">
+        <span class="icon-ui-notice-round">
+        </span>
+        <span id="errorMessage"></span>
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="panel panel-white">
+    <aside class="js-accordion accordion">
+      <div class="accordion-section">
+        <h4 class="accordion-title">
+          <span class="accordion-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon">
+              <path d="M28 9v5L16 26 4 14V9l12 12L28 9z" /></svg>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+            class="svg-icon svg-icon-dark-blue title-icon">
+            <path
+              d="M31.297 16.047c0 8.428-6.826 15.25-15.25 15.25S.797 24.475.797 16.047c0-8.424 6.826-15.25 15.25-15.25s15.25 6.826 15.25 15.25zM18 24V12h-4v12h-2v2h8v-2h-2zm0-18h-4v4h4V6z" />
+          </svg>
+          Instruktioner
+        </h4>
+        <div class="accordion-content instructions">
+          <p class="instruction-subtitle">'Kartlager':</p>
+          <ul>
+            <li>Lagerlistan visa de lager i kartan som är nödvändiga för att utföra analysen</li>
+            <li>Aktivera/avaktivera kartlager genom att klicka i respektive checkbox</li>
+            <li>I höger kolumn finns menyer för den rasterfunktion som ska användas. För Sentinel lagret är detta endast
+              visningslägen, dvs vilken rendering lagret ska ha för att visa före och efter bild.
+              För lagret 'Förändringsanalys' väljs den rasterfunktion som ska användas vid förändringsanalysen.
+            </li>
+          </ul>
+
+          <p class="instruction-subtitle">'Bildväljare':</p>
+          <p>
+            Bildväljaren är menat som ett verktyg för att underlätta att välja så bra bilder som möjligt för
+            differensanalysen.
+            En bra bild är att betrakta som en bild med minimala visuella 'störningar' så som moln, molnskugga,
+            iskristaller, dimma, snötäcke mm. Vidare så spelar också bildernas datum in i analysen, både tidsspannet
+            mellan bilderna och vilken årstid bilderna togs eftersom detta direkt påverkar vegationsindex.
+          </p>
+          <ul>
+
+            <li>Verktyget består av två flikar; 'Före bild' och 'Efter bild'.</li>
+            <li>Under respektive flik visas en graf med datum på x-axeln samt antal av ett valbart attribut på y-axeln.
+            </li>
+            <li>
+              För att ändra vilket attribut som ska visas, använd menyn till höger ovanför grafen. Följande attribut
+              visas i menyn:
+              <ol>
+                <li> <i>Antal indexrutor:</i> Antal 5km-rutor i aktuellt extent</li>
+                <li> <i>Max indexrutor:</i> Största möjliga antal rutor i valt extent</li>
+                <li> <i>Täckning:</i> Täckning i procent (antal/max antal)</li>
+                <li> <i>Summa bra data:</i> Vägd summa av de bilder med låg molnighet, lågt istäcke och snötäcke mm. i
+                  aktuell
+                  utbredning i kartan.
+                  Ett högt värde kan alltså tolkas som att den aktuella utbredningen i kartan innehåller många relativt
+                  klara bilder utan moln.</li>
+                <li> <i>Medel bra data:</i> (sumBraData / antalIndexrutor)</li>
+              </ol>
+            </li>
+            <li>Zooma i grafen genom att dra på grafytan med vänster musknapp intryckt. Zomma ut genom att högerklicka i
+              grafytan.</li>
+            <li>För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen.
+            </li>
+          </ul>
+
+          <p class="instruction-subtitle">'Valbara parametrar':</p>
+          <p>Här visas de parametrar som är valbara i förändringsanalysen. Till skillnad från 'Före bild' och 'Efter
+            bild', så kan förändringsanalysen köras utan att dessa värden anges.</p>
+
+          <p class="instruction-subtitle">Exempel förändringsanalys:</p>
+          <button id="testareabtn">Testområde</button>
+
+          <li>
+            Kontrollera att lagret 'Sentinel 220' är aktiverat i lagerlistan och att lagret 'Förändringsanalys' är
+            inaktiverat.
+          </li>
+          <li>
+            Zooma/panorera till önskad plats/utbredning i kartan. T.ex m.h.a knappen 'Testområde' ovan.
+          </li>
+          <li>
+            Öppna bildväljaren, kontrollera så att fliken 'Före bild' är aktiverad. Zooma till önskad tidsperiod genom
+            att dra i grafen med musen.
+          </li>
+          <li>
+            Kontrollera så att 'Summa bra data' visas på y-axeln, välj annars detta i menyn ovanför grafen.
+          </li>
+          <li>
+            Välj den stapel med högst värde i grafen runt det önskade datumet. Bilden laddas då i kartan och datumet
+            visas i fältet nedanför grafen.
+          </li>
+          <li>
+            Välj sedan fliken 'Efter bild' och upprepa stegen ovan.
+          </li>
+          <li>
+            När två datum har valts, aktivera lagret 'Förändringsanalys' i lagerlistan, så körs analysen.
+          </li>
+          <li>
+            Analysen körs sedan om automatiskt när nytt datum väljs, när någon av de valbara parametrarna ändras eller
+            när kartans utbredning ändras, så som vid zoomning eller panorering i kartan. Det rekommenderas därför att
+            inaktivera lagret 'Förändringsanalys'
+            vid stora förflyttningar i kartan, eftersom det påverkar laddtiden.
+          </li>
+
+        </div>
+      </div>
+      <div class="accordion-section is-active">
+        <h4 class="accordion-title">
+          <span class="accordion-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon">
+              <path d="M28 9v5L16 26 4 14V9l12 12L28 9z" /></svg>
+          </span>
+          Kartlager
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+            class="svg-icon svg-icon-dark-blue title-icon" style="float:right">
+            <path
+              d="M32.047 9.047l-16 9-16-9 16-9zm-16 13.015L1.922 14.117.047 15.172l16 9 16-9-1.875-1.055zm0 5.93L1.922 20.047.047 21.102l16 9 16-9-1.875-1.055z" />
+          </svg>
+        </h4>
+        <div class="accordion-content">
+          <table class="table table-plain layer-list-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Namn</th>
+                <th>Rasterfunktion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="checkbox-cell">
+                  <input type="checkbox" id="sentinelLayerCheckbox">
+                </td>
+                <td class="layer-name-cell">
+                  <span id="inputLayerText">Sentinel 220 (Före bild)</span>
+                  &nbsp;
+                  <div class="layer-loader" id="sentinelLayerLoader">
+                    <div class="la-line-scale la-dark la-sm">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+
+
+                </td>
+                <td id="displayRasterfunctionsSelectCell">
+
+                </td>
+              </tr>
+              <tr>
+                <td class="checkbox-cell">
+                  <input type="checkbox" id="resultLayerCheckbox">
+                </td>
+                <td class="layer-name-cell">
+                  <span id="resultLayerText">Förändringsanalys</span>
+                  &nbsp;
+                  <div class="layer-loader" id="resultLayerLoader">
+                    <div class="la-line-scale la-dark la-sm">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                  <br>
+                  <span id="resultLayerHelpText">
+                    Inga datum valda
+                  </span>
+                </td>
+                <td id="analysisRasterfunctionsSelectCell">
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="accordion-section is-active">
+        <h4 class="accordion-title">
+          <span class="accordion-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon">
+              <path d="M28 9v5L16 26 4 14V9l12 12L28 9z" /></svg>
+          </span>
+          Bildväljare
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+            class="svg-icon svg-icon-dark-blue title-icon">
+            <path
+              d="M0 0v14h13.99V0H0zm11.99 11.92V12H7.16c.471-.879 1.043-2.027 1.676-2.792.789 1.11 1.676 2.053 3.154 2.712zM5.951 2.336c.119.233.234.475.311.754.361 1.308.857 3.078 1.738 4.752C7.021 8.943 6.15 10.401 5.504 12H1.99V6.225c2.49-.862 3.445-2.79 3.961-3.889zM31.99 0H18v14h13.99V0zm-5.73 12c.01-.25.037-.561.084-.805.029-.761.309-1.917.752-2.108.242-.106.461-.163.644-.214.412-.111.877-.239 1.137-.714.266-.486.143-1.063-.053-1.684.088-.142.445-.284 1.166-.345v5.869h-3.73zm3.73-7.397c-.848.051-1.834.245-2.373.964-.301.402-.377.909-.215 1.429.055.173.084.294.1.376-.053.016-.111.031-.16.045a6.036 6.036 0 0 0-.846.284c-1.486.643-1.646 2.978-1.648 3.311-.033.161-.105.432-.102.989h-2.045c.096-.496.098-.65.08-.83.059-.568.252-3.403-1.559-4.344a2.35 2.35 0 0 1 .383-.109c2.705-.127 3.348-2.492 3.57-3.697.102-.549.672-.849 1.262-1.02h3.553v2.603zm2 13.397H18v14h13.99V18zm-10.084 8.633L23.599 30H19.99V20h.338l4.371 2.661-2.691 3.142a.754.754 0 0 0-.102.83zM23.234 20h6.756v4.113L23.234 20zM0 18v14h13.99V18H0zm11.715 3.108a2.161 2.161 0 0 1-1.689 1.367c-1.225.204-1.838 1.017-2.068 1.849-1.502-.482-2.896-.236-3.859.721-1.141 1.139-1.377 3.014-.57 4.562.045.086.096.253.133.393h-1.67V20h10.01v.127c-.365.515-.27.933-.285.981z" />
+          </svg>
+        </h4>
+        <div class="accordion-content">
+          <div class="row">
+            <div class="col">
+
+              <div class="js-tab-group histogramChartTabs">
+                <nav class="tab-nav">
+                  <a class="tab-title is-active js-tab" id="histogramTab1">Före bild</a>
+                  <a class="tab-title js-tab" id="histogramTab2">Efter bild</a>
+                </nav>
+                <section class="tab-contents">
+                  <article class="tab-section js-tab-section is-active">
+                    <div class="row">
+                      <div class="col">
+                        <div id="histogramAttributeSelect1" class="histogramAttributeSelect"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col chart-col">
+                        <div class="chart-loader" id="chartLoader1">
+                          <div class="la-ball-clip-rotate la-dark la-sm chart-loader-inner">
+                            <div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="chart1" style="width:100%;height:200px;"></div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="tab-section js-tab-section">
+                    <div class="row">
+                      <div class="col">
+                        <div id="histogramAttributeSelect2" class="histogramAttributeSelect"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col chart-col">
+                        <div class="chart-loader" id="chartLoader2">
+                          <div class="la-ball-clip-rotate la-dark la-sm chart-loader-inner">
+                            <div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="chart2" style="width:100%;height:200px;"></div>
+                      </div>
+                    </div>
+
+                  </article>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col form-col">
+              <label>
+                Före bild <span style="color:red">&#42;</span>
+                <input type="text" id="date1Input" readonly>
+              </label>
+            </div>
+            <div class="col form-col">
+              <label>
+                Efter bild <span style="color:red">&#42;</span>
+                <input type="text" id="date2Input" readonly>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-section">
+        <h4 class="accordion-title">
+          <span class="accordion-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon">
+              <path d="M28 9v5L16 26 4 14V9l12 12L28 9z" /></svg>
+          </span>
+          Valbara parametrar
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+            class="svg-icon svg-icon-dark-blue title-icon">
+            <path
+              d="M3.998 8H0V4h3.998v4zm0 6H0v4h3.998v-4zm0 10H0v4h3.998v-4zm28 0h-24v4h24v-4zm0-10h-24v4h24v-4zm0-10h-24v4h24V4z" />
+          </svg>
+        </h4>
+        <div class="accordion-content">
+          <div class="row">
+            <div class="col form-col">
+
+              <label>
+                Method (optional)
+                <select class="select-full" id="methodSelect">
+                  <option value="colormap">Colormap</option>
+                  <option value="raw">Raw</option>
+                  <option value="grayscale">Grayscale</option>
+                </select>
+              </label>
+              <label>
+                Translation (optional)
+                <select class="select-full" id="translationSelect">
+                  <option value="on">On</option>
+                  <option value="off">Off</option>
+                </select>
+              </label>
+              <label>
+                Vegetation Index (optional)
+                <select class="select-full" id="vegIndexSelect">
+                  <option value="ndvi">NDVI</option>
+                  <option value="savi">SAVI</option>
+                </select>
+              </label>
+            </div>
+            <div class="col form-col">
+              <label>
+                Soil (optional,används endast vid SAVI)
+                <select class="select-full" id="soilSelect">
+                  <option value="0.0">0.0</option>
+                  <option value="0.1">0.1</option>
+                  <option value="0.2">0.2</option>
+                  <option value="0.3">0.3</option>
+                  <option value="0.4">0.4</option>
+                  <option value="0.5">0.5</option>
+                  <option value="0.6">0.6</option>
+                  <option value="0.7">0.7</option>
+                  <option value="0.8">0.8</option>
+                  <option value="0.9">0.9</option>
+                  <option value="1.0">1.0</option>
+                </select>
+              </label>
+              <label>
+                Radnorm (optional)
+                <select class="select-full" id="randnormSelect">
+                  <option value="regr">Regr</option>
+                  <option value="none">None</option>
+                  <option value="hist">Hist</option>
+                </select>
+              </label>
+              <label>
+                Nir Band (optional 1-13)
+                <input type="number" min="1" max="13" step="1" value="4" id="nirBandInput">
+              </label>
+              <label>
+                Red Band (optional 1-13)
+                <input type="number" min="1" max="13" step="1" value="3" id="redBandInput">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>

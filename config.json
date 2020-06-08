@@ -1,0 +1,76 @@
+{
+  "InputLayer": {
+    "url": ""
+  },
+  "ResultLayer": {
+    "url": ""
+  },
+  "HistogramApi": {
+    "url": "",
+    "apiKey": ""
+  },
+   "analysisRasterFunctions": [
+    {
+      "name": "SKS_Barkborre",
+      "displayName": "SKS Barkborre",
+      "useAsDefault": true
+    }
+  ],
+  "DisplayRasterFunctions": [
+    {
+      "name": "SKS_SWIR1",
+      "displayName": "SWIR1 - Mellaninfraröda färger",
+      "useAsDefault": false
+    },
+    {
+      "name": "SJV_Jordbruksaktivitet",
+      "displayName": "Jordbruksaktivitet",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_ACORVI",
+      "displayName": "NDVI - vegetationsindex",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_ACSAVI",
+      "displayName": "SAVI - vegetationsindex",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_Brandinformation",
+      "displayName": "Brand #1",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_NIR",
+      "displayName": "NIR - Närinfraröda färger",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_RGB",
+      "displayName": "RGB - Naturliga färger",
+      "useAsDefault": true
+    },
+    {
+      "name": "SKS_SWIR2",
+     "displayName": "SWIR2 - Mellaninfraröda färger",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_Brand1",
+      "displayName": "Brand #2",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_Brand2",
+      "displayName": "Brand #3",
+      "useAsDefault": false
+    },
+    {
+      "name": "SKS_NDMI",
+      "displayName": "NDMI - Fuktighetsindex",
+      "useAsDefault": false
+    }
+  ]
+}
