@@ -5,7 +5,7 @@
 <p></p>
 
 <img src="https://user-images.githubusercontent.com/26382924/84134312-ade42a00-aa48-11ea-998f-3645ad10d843.png" width="300px">
-
+<img src="https://user-images.githubusercontent.com/26382924/84134904-8b9edc00-aa49-11ea-8403-d27d81596937.png" width="300px">
 
 ## Innehållsförteckning
 
