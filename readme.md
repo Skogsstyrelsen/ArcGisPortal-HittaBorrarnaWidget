@@ -40,7 +40,10 @@ Widget instelleras i ArcGIS Portal som en Custom widget.
 ### Installera Proxy för Portal
 Bildtjänsten med Sentineldata kräver inloggning. För att slippa ange inloggningsuppgifter i en applikation kan anropen till tjänsten gå via en Forward Proxy som sätts upp i Portalen.
 - <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/using-a-forward-proxy-server-with-portal-for-arcgis.htm">Installera och konfigurera Forward Proxy.</a>
-### Konfigurera Widget
+### Lägga till och konfigurera Widget
+<a href="https://enterprise.arcgis.com/en/portal/latest/use/widgets-tab.htm">Allmänt om att lägga till widgets i Web Appbuilder.</a><br>
+HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den. 
+När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar.
 
 ## Användning
 ### Kartlager
