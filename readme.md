@@ -253,10 +253,12 @@ Pixelvärdena i satellitdatat kan skilja sig åt något även om det i praktiken
 - *Hist*
   - Kompensationen sker här genom en iterativ histogrammatchning. På samma sätt som ovan så kastas 30% av pixlarna med störst skillnader bort i varje iteration.
 #### NIR Band:
-För en korrekt beräkning av NDVI och SAVI måste rätt spektralband används.
-- Numerisk värde mellan 1 och 12
+För en korrekt beräkning av NDVI och SAVI måste rätt spektralband används. För en korrekt beräkning av dessa vegetationsindex måste *B8-NIR* och *B4-RED* användas (se tabellen ovan). Värdena bör inte ändras.
+- Numeriskt värde mellan 1 och 12. (Default 4.)
+- Band 13 ska aldrig användas. Det innehåller en tematisk klassning av molnen.
 #### Red Band:
-- Numeriskt värde mellan 1 och 12
+- Numeriskt värde mellan 1 och 12. (Default 3.)
+- Band 13 ska aldrig användas. Det innehåller en tematisk klassning av molnen.
 
 ## Licens
 
