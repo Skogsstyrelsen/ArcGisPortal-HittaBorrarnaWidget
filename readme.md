@@ -13,7 +13,7 @@
   <tr>
     <td>Sentinel2-bild från 2018-05-19</td>
     <td>Sentinel2-bild från 2019-05-29</td>
-    <td>Förändringsanalysen visar med gulgrön<br>färg de områden som förändrats mellan<br>de båda tillfällena</td>
+    <td>Förändringsanalysen visar med<br>gulgrön färg de områden som<br>förändrats mellan de båda tillfällena</td>
   </tr>
 </table>
 
