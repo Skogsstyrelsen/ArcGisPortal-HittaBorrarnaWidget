@@ -17,13 +17,14 @@
   </tr>
 </table>
 
-<p>Analysen som utförs bygger på analys av satellitdata från Sentinel-2 inom det europeiska <a href="https://www.copernicus.eu/sv/">Copernicusprogrammet</a>. Satelliterna passerar Sverige flera gånger per vecka och kan därmed utnyttjas för att snabbt får en aktuell analys. Som vädret är i Sverige kommer tyvärr många bilder att innehålla moln och sökandet efter dem kan vara svårt och tidskrävande. Den här widgten underlättar sökandet efter de molnfria bilder som är lämpliga för analysen men gör det också möjligt att snabbt utföra själva analysen på de molnfria bilderna som valts.</p>
+<p>Analysen som utförs bygger på analys av satellitdata från [Sentinel-2](#sentinel2) inom det europeiska <a href="https://www.copernicus.eu/sv/">Copernicusprogrammet</a>. Satelliterna passerar Sverige flera gånger per vecka och kan därmed utnyttjas för att snabbt får en aktuell analys. Som vädret är i Sverige kommer tyvärr många bilder att innehålla moln och sökandet efter dem kan vara svårt och tidskrävande. Den här widgten underlättar sökandet efter de [molnfria bilder](#webapi) som är lämpliga för analysen men gör det också möjligt att snabbt utföra själva analysen på de molnfria bilderna som valts.</p>
 <p>I princip kan vilka bilder som helst användas för att analysera skogen. Funktionen filtrerar nämligen bort de områden som är täckta av moln, dis eller har ett av moln beskuggat område. Pixlar med snö kommer heller inte att analyseras. Men väljer man för molniga bilder eller bilder med snö kan analysen bli direkt felaktig eftersom det finns för få pixlar kvar som går att analysera.</p>
 <p>Tjänsten bygger i grunden på en förändringsanalys där skillnaden i vegetationsindex mellan två bilder visas. Förändringarna görs på den skog som klassats som barrskogar eller blandskogar i Naturvårdsverkets <a href=https://www.naturvardsverket.se/Sa-mar-miljon/Kartor/Nationella-Marktackedata-NMD/">Nationella Marktäckedata (NMD)</a>. Användaren får därmed möjlighet att följa de  vitalitetsförändringar som poteniellt kan vara orsakade av granbarkborren.
 
 ## Innehållsförteckning
 
-- [Systemkrav](#systemkrav) 
+- [Systemkrav](#systemkrav)
+- [Indata](#indata)
 - [Installation](#installation)
 - [Användning](#anvandning)
 - [Licens](#licens)
@@ -33,6 +34,9 @@
 - Web App Builder Developer Edition ver 2.12 för att skapa fristående appliktioner eller anpassa widget.
 - API nyckel för Skogsstyrelsens webapi som används av Bildväljaren.
 - Användarnamn och lösenord för den ArcGIS bildtjänst med Sentineldata som används i widgeten. <a href="https://skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/skaffa-anvandarkonto/"> Beställ användarkonto på Skogsstyrelsens webbplats</a>.
+## Indata
+### Bildtjänsten Sentinel2_2_0
+### Metadata om moln från webapi
 ## Installation
 ### Installera Widget
 Widget instelleras i ArcGIS Portal som en Custom widget.
@@ -97,6 +101,8 @@ För varje rasterfunktion som ska vara tillgänglig anges:
 </table>
 
 - För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen.
+<img title="ValjStapelFore" src="https://user-images.githubusercontent.com/26382924/84268595-31c11380-ab28-11ea-8141-ea1587d8674c.PNG" width="500px">
+
 
 ### Valbara parametrar
 <p>Här visas de parametrar som är valbara i förändringsanalysen. Här finns inte 'Före bild' och 'Efter bild' eftersom de är obligatoriska, men all övriga parametrar har default värden som kan ändras.</p>
