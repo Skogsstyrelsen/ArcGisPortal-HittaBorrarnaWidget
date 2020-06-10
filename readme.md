@@ -45,9 +45,12 @@ Bildtjänsten med Sentineldata kräver inloggning. För att slippa ange inloggni
 HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den. 
 När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar. 
 Konfiguraitonen har JSON struktur. Parametrar att konfigurera:
-- InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.
+- InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data. <br>https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer
 - ResultLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.
 - HistogramApi - sökväg till webapi som används av Bildväljaren.
+
+
+Förifyllda parametrar:
 - analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringdsanalysen.
 - DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder.
 
