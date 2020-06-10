@@ -35,6 +35,8 @@
 ## Installation
 
 ## Användning
+### Kartlager
+![Kartlager](https://user-images.githubusercontent.com/26382924/84244237-a59cf500-ab03-11ea-80df-b2ee83703b17.PNG)
 
 ## Licens
 
