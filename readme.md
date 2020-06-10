@@ -31,6 +31,8 @@
 ## Systemkrav
 - ArcGIS portal 10.7.1 med Web App Builder.
 - Web App Builder Developer Edition ver 2.12 för att skapa fristående appliktioner eller anpassa widget.
+- API nyckel för Skogsstyrelsens webapi som används av Bildväljaren.
+- Användarnamn och lösenord för den ArcGIS bildtjänst med Sentineldata som används i widgeten. <a href="https://skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/skaffa-anvandarkonto/"> Beställ användarkonto på Skogsstyrelsens webbplats</a>.
 ## Installation
 - <a href="https://enterprise.arcgis.com/en/portal/latest/use/add-custom-widgets.htm"> Installera och registrera Widget i ArcGIS Portal.</a>
 - Konfigurera Widget
