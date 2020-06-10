@@ -36,11 +36,27 @@
 
 ## Användning
 ### Kartlager
-<img title="Kartlager" src="https://user-images.githubusercontent.com/26382924/84244237-a59cf500-ab03-11ea-80df-b2ee83703b17.PNG" width="700px">
+<img title="Kartlager" src="https://user-images.githubusercontent.com/26382924/84244237-a59cf500-ab03-11ea-80df-b2ee83703b17.PNG" width="650px">
 
 - Lagerlistan visar de lager i kartan som är nödvändiga för att utföra analysen.
 - Aktivera/avaktivera kartlager genom att klicka i respektive checkbox.
 - I höger kolumn finns menyer för den rasterfunktion som ska användas. För Sentinel lagret är detta endast visningslägen, dvs vilken rendering lagret ska ha för att visa före och efter bild. För lagret 'Förändringsanalys' väljs den rasterfunktion som ska användas vid förändringsanalysen.
+
+### Bildväljare
+<p>Bildväljaren är menat som ett verktyg för att underlätta att välja så bra bilder som möjligt för differensanalysen. En bra bild är att betrakta som en bild med minimala visuella 'störningar' så som moln, molnskugga, iskristaller, dimma, snötäcke mm. Vidare så spelar också bildernas datum in i analysen, både tidsspannet mellan bilderna och vilken årstid bilderna togs eftersom detta direkt påverkar vegationsindex.</p>
+
+<img title="Bildvaljare" src="https://user-images.githubusercontent.com/26382924/84247457-6d4be580-ab08-11ea-988f-67c4897c7fd9.PNG" width="650px">
+
+- Verktyget består av två flikar; 'Före bild' och 'Efter bild'.
+- Under respektive flik visas en graf med datum på x-axeln samt antal av ett valbart attribut på y-axeln.
+- För att ändra vilket attribut som ska visas, använd menyn till höger ovanför grafen. Följande attribut visas i menyn:
+  - Antal indexrutor: Antal 5km-rutor i aktuellt extent
+  - Max indexrutor: Största möjliga antal rutor i valt extent
+  - Täckning: Täckning i procent (antal/max antal)
+  - Summa bra data: Vägd summa av de bilder med låg molnighet, lågt istäcke och snötäcke mm. i aktuell utbredning i kartan. Ett högt värde kan alltså tolkas som att den aktuella utbredningen i kartan innehåller många relativt klara bilder utan moln.
+  - Medel bra data: (sumBraData / antalIndexrutor)
+- Zooma i grafen genom att dra på grafytan med vänster musknapp intryckt. Zomma ut genom att högerklicka i grafytan.
+- För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen.
 
 ## Licens
 
