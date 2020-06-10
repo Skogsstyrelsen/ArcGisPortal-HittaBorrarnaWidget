@@ -235,6 +235,15 @@ Parametern styr vilken typ av data som returneras till klienten
 - *Grayscale*
   - Räknar om analysen till ett värde värde mellan 0 och 255
   - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255
+
+<table style="width:100%">
+  <tr>
+    <td><img title="Colorbar" src="https://user-images.githubusercontent.com/26382924/84285560-e87bbe80-ab3d-11ea-90de-65644935843e.png" height="300px"></td>
+    <td>Bilden visar färgskalan som används när parametern är satt till <i>Colormap</i>.<br> Färgerna har optimerats för att lättare kunna urskilja förändringar sominnebär ett lägre<br>vegetationsindex i den senaste bilden. Blåa färger indikerar ingen förändring medan gula färger<br>visar på en stor negativ förändring av vegetationsindexet i den senaset bilden (<i>Efter bilden<i>).</td>
+  </tr>
+</table>
+
+
 #### Translation:
 Parametern gör det möjligt att välja om de bilder som ingår i analysen ska matchas till varandra geometriskt. Data från Sentinel-2 dras tyvärr med en geometrisk förskjtning mellan bilderna som oftast gör att translatikonen är nödvändig. Detta förbättrar skärpan i analysen.
 - *On* (default)
