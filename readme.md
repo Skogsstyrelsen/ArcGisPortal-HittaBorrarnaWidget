@@ -43,7 +43,14 @@ Bildtjänsten med Sentineldata kräver inloggning. För att slippa ange inloggni
 ### Lägga till och konfigurera Widget
 <a href="https://enterprise.arcgis.com/en/portal/latest/use/widgets-tab.htm">Allmänt om att lägga till widgets i Web Appbuilder.</a><br>
 HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den. 
-När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar.
+När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar. 
+Konfiguraitonen har JSON struktur. Parametrar att konfigurera:
+- InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.
+- ResultLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.
+- HistogramApi - sökväg till webapi som används av Bildväljaren.
+- analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringdsanalysen.
+- DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder.
+
 
 ## Användning
 ### Kartlager
