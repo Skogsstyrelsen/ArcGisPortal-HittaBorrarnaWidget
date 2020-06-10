@@ -67,13 +67,13 @@
   - Colormap,
   - Raw
   - Greyscale
--Translation
+- Translation
   - On
   - Off
--Vegetation Index
+- Vegetation Index
   - NDVI
   - SAVI
-Soil
+- Soil
   - Numerisk värde mellan 0.0 och 1.0
 - Radnorm
   - Regr
