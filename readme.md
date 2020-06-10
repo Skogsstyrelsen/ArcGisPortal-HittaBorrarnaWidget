@@ -3,7 +3,6 @@
 ### En widget för förändringsanalys mellan två rasterbilder<br>
 <p>Denna widget förenklar valet av de satellitbilder som ingår i en förändringsanalys av eventuellt barkborreskadad skog. Den gör det dessutom enklare för användaren att hantera de parametrar som går att justera i analysen. Genom denna widget blir det möjligt att integrera förändringsanalysen med din egen organisations GIS-data och på så sätt strömlinjeforma ett arbetsflöde som underlättar letandet efter områden drabbade av granbarkborrens härjningar hela vägen från bildanalys till fältarbetet.</p>
 <p></p>
-<p>Analysen som utförs bygger på analys av satellitdata från Sentinel-2 inom det europeiska <a href="https://www.copernicus.eu/sv/">Copernicusprogrammet</a>. Bilder från Sentinel-2 registreras över Sverige flera gånger i veckan och laddas hem till Skogsstyrelsens server dagligen. Som vädret är i Sverige kommer många bilder att innehålla moln. Den här widgten underlättandet sökandet efter de molnfria bilder som är lämpliga för analysen.</p>
 <p>Exemplet nedan visar ett område där förändringen mellan två bilder analyserats.</p>
 <table style="width:100%">
   <tr>
@@ -18,9 +17,10 @@
   </tr>
 </table>
 
-
-
-
+<p>Analysen ger användaren möjlighet att följa vitalitetsförändringar i barr- och blandskogar. </p>
+<p>Analysen som utförs bygger på analys av satellitdata från Sentinel-2 inom det europeiska <a href="https://www.copernicus.eu/sv/">Copernicusprogrammet</a>. Satelliterna passerar Sverige flera gånger per vecka och kan därmed utnyttjas för att snabbt får en aktuell analys. Som vädret är i Sverige kommer tyvärr många bilder att innehålla moln och sökandet efter dem kan vara svårt och tidskrävande. Den här widgten underlättar sökandet efter de molnfria bilder som är lämpliga för analysen men gör det också möjligt att snabbt utföra själva analysen på de molnfria bilderna som valts.</p>
+<p>I princip kan vilka bilder som helst användas för att analysera skogen. Funktionen filtrerar nämligen bort de områden som är täckta av moln, dis eller har ett av moln beskuggat område. Pixlar med snö kommer heller inte att analyseras. Men väljer man för molniga bilder eller bilder med snö kan analysen bli direkt felaktig eftersom det finns för få pixlar kvar som går att analysera.</p>
+<p>Tjänsten bygger i grunden på en förändringsanalys där skillnaden i vegetationsindex mellan två bilder visas. Förändringarna görs på den skog som klassats som barrskogar eller blandskogar i Naturvårdsverkets Nationella Marktäckedata (NMD).</p>
 
 ## Innehållsförteckning
 
