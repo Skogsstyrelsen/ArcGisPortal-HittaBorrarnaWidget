@@ -1,6 +1,6 @@
 # Hittaborrarna Widget
 
-### En widget för differensanalys mellan två rasterbilder<br>
+### En widget för förändringsanalys mellan två rasterbilder<br>
 <p>Denna widget förenklar valet av de satellitbilder som ingår i en förändringsanalys av eventuellt barkborreskadad skog. Den gör det dessutom enklare för användaren att hantera de parametrar som går att justera i analysen. Genom denna widget blir det möjligt att integrera förändringsanalysen med din egen organisations GIS-data och på så sätt strömlinjeforma ett arbetsflöde som underlättar letandet efter områden drabbade av granbarkborrens härjningar hela vägen från bildanalys till fältarbetet.</p>
 <p></p>
 <p>Analysen som utförs bygger på analys av satellitdata från Sentinel-2 inom det europeiska <a href="https://www.copernicus.eu/sv/">Copernicusprogrammet</a>. Bilder från Sentinel-2 registreras över Sverige flera gånger i veckan och laddas hem till Skogsstyrelsens server dagligen. Som vädret är i Sverige kommer många bilder att innehålla moln. Den här widgten underlättandet sökandet efter de molnfria bilder som är lämpliga för analysen.</p>
