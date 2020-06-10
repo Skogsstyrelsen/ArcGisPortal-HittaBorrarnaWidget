@@ -51,11 +51,16 @@ Konfiguraitonen har JSON struktur. Parametrar att konfigurera:
 - apiKey - api nyckel för HistogramApi. Erhålls när man ansöker om tillgång till API.
 
 Förifyllda parametrar:
-- analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringdsanalysen.
-- DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder.
+- analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringdsanalysen. Ger användaren möjlighet att välja vilken förändringsanalys som ska användas i widgeten (sektion Kartlager).
+- DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder. Ger användaren möjlighet att välja hur ingående bilder ska visas (sektion Kartlager).
 
 Det går att ange flera rasterfunktioner både för visning och analys. Dock är det inte säkert att alla fungera med den här widgeten.
-För att se vilka 
+Det går att se vilka rasterfunktioner som är tillgängliga genom att se i tjänstens "child resources", RasterFunctionInfos  https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer/rasterFunctionInfos
+
+För varje rasterfunktion som ska vara tillgänglig anges:
+- name - rasterfunktionens namn i tjänsten ("name")
+- displayName - Namn som visas i widgeten under Kartlager.
+- useAsDefault - "true" visas som default, "false" visas inte som default.
 
 ## Användning
 ### Kartlager
