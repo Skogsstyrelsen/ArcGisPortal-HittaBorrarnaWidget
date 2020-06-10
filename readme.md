@@ -36,7 +36,8 @@
 
 ## Användning
 ### Kartlager
-![Kartlager](https://user-images.githubusercontent.com/26382924/84244237-a59cf500-ab03-11ea-80df-b2ee83703b17.PNG)
+<img title="Kartlager" src="https://user-images.githubusercontent.com/26382924/84244237-a59cf500-ab03-11ea-80df-b2ee83703b17.PNG" width="700px">
+
 - Lagerlistan visar de lager i kartan som är nödvändiga för att utföra analysen.
 - Aktivera/avaktivera kartlager genom att klicka i respektive checkbox.
 - I höger kolumn finns menyer för den rasterfunktion som ska användas. För Sentinel lagret är detta endast visningslägen, dvs vilken rendering lagret ska ha för att visa före och efter bild. För lagret 'Förändringsanalys' väljs den rasterfunktion som ska användas vid förändringsanalysen.
