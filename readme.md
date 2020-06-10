@@ -84,6 +84,18 @@ För varje rasterfunktion som ska vara tillgänglig anges:
   - Summa bra data: Vägd summa av de bilder med låg molnighet, lågt istäcke och snötäcke mm. i aktuell utbredning i kartan. Ett högt värde kan alltså tolkas som att den aktuella utbredningen i kartan innehåller många relativt klara bilder utan moln.
   - Medel bra data: (sumBraData / antalIndexrutor)
 - Zooma i grafen genom att dra på grafytan med vänster musknapp intryckt. Zomma ut genom att högerklicka i grafytan.
+
+<table style="width:100%">
+  <tr>
+    <td><img title="ZoomaGrafen" src="https://user-images.githubusercontent.com/26382924/84267859-0f7ac600-ab27-11ea-9540-a1050e91d784.png" width="500px"></td>
+    <td><img title="InzoomadGraf" src="https://user-images.githubusercontent.com/26382924/84267877-199cc480-ab27-11ea-86d0-88c32a9f9a13.PNG" width="500px"></td>
+  </tr>
+  <tr>
+    <td>Zooma genom att rita en ruta med vänster musknapp</td>
+    <td>Det inzoomad området gör det lättare att välja rätt stapel</td>
+  </tr>
+</table>
+
 - För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen.
 
 ### Valbara parametrar
