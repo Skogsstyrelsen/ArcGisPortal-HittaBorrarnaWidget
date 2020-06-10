@@ -23,9 +23,7 @@
 
 ## Innehållsförteckning
 
-- [Systemkrav](#systemkrav)
-  <p>- Web App Builder i ArcGIS Enterprise 10.7.1 <br>- Web App Builder Developer Edition ver 2.12 för att skapa fristående appliktioner eller anpssa behövs  <br></p>
-  
+- [Systemkrav](#systemkrav) 
 - [Installation](#installation)
 - [Användning](#anvandning)
 - [Licens](#licens)
