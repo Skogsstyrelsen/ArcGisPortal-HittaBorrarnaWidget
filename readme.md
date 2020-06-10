@@ -29,7 +29,8 @@
 - [Licens](#licens)
 
 ## Systemkrav
-
+- ArcGIS portal 10.7.1 med Web App Builder.
+- Web App Builder Developer Edition ver 2.12 för att skapa fristående appliktioner eller anpassa widget.
 ## Installation
 
 ## Användning
