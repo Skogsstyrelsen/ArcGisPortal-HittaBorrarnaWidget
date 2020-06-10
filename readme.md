@@ -32,7 +32,8 @@
 - ArcGIS portal 10.7.1 med Web App Builder.
 - Web App Builder Developer Edition ver 2.12 för att skapa fristående appliktioner eller anpassa widget.
 ## Installation
-
+- <a href="https://enterprise.arcgis.com/en/portal/latest/use/add-custom-widgets.htm"> Installera och registrera Widget i ArcGIS Portal.</a>
+- Konfigurera Widget
 ## Användning
 ### Kartlager
 <img title="Kartlager" src="https://user-images.githubusercontent.com/26382924/84244237-a59cf500-ab03-11ea-80df-b2ee83703b17.PNG" width="650px">
