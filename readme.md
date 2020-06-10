@@ -64,18 +64,22 @@
 <img title="ValbaraPrametrar" src="https://user-images.githubusercontent.com/26382924/84248553-e435ae00-ab09-11ea-8824-41985439008c.PNG" width="650px">
 
 - Metod
-  - Colormap (default). 
-    - Räknar om analysen till ett värde värde mellan 0 och 255
-    - Returnerar resultatet som en 8-bitars (u8) RGB-bild enligt färgskalan i bilden nedan
-  - Raw (inte för display utan snarare för vidare bearbetning)
-    - Detta är analysen precis som den ser ut från differensen mellan de båda bilderna utan någon skalering.
-    - Returnerar det råa resultatet som en 32-bitars float (f32) där värdena löper mellan -2.0 och 2.0.
-  - Grayscale
-    - Räknar om analysen till ett värde värde mellan 0 och 255
-    - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255
+  - Parametern styr vilken typ av data som returneras till klienten
+    - Colormap (default). 
+      - Räknar om analysen till ett värde värde mellan 0 och 255
+      - Returnerar resultatet som en 8-bitars (u8) RGB-bild enligt färgskalan i bilden nedan
+    - Raw (inte för display utan snarare för vidare bearbetning)
+      - Detta är analysen precis som den ser ut från differensen mellan de båda bilderna utan någon skalering.
+      - Returnerar det råa resultatet som en 32-bitars float (f32) där värdena löper mellan -2.0 och 2.0.
+    - Grayscale
+      - Räknar om analysen till ett värde värde mellan 0 och 255
+      - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255
 - Translation
-  - On
-  - Off
+  - Parametern gör det möjligt att välja om de bilder som ingår i analysen ska mtachas till varandra geometriskt. Detta är oftast nödvändigt för att analysen ska få den skärpa som behövs.
+    - On (default)
+      - Geometrisk korrigering utförs
+    - Off
+      - Ingen geometrisk korrigering utförs.
 - Vegetation Index
   - NDVI
   - SAVI
