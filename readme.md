@@ -143,7 +143,10 @@
   
 
 ### Metadata om moln från webapi
-<p>Varje gång nya data från Sentinel-2 kommit in till Skogsstyrelsen så görs en beräkning av andelen moln. Det görs i ett rutmönster över hela landet där varje ruta är 5x5 km. Informationen i dessa rutor används för att skapa staplarna som visualiseras i denna widget.</p>
+<p>Varje gång nya data från Sentinel-2 kommit in till Skogsstyrelsen så görs en beräkning av andelen moln. Det görs i ett rutmönster över hela landet där varje ruta är 5x5 km. Informationen i dessa rutor lagras i en databastabell och används för att skapa staplarna som visualiseras i denna widget.</p>
+<p>I bilden nedan visualiseras informationen från tabellen vid ett specifikt datum. I det här fallet har de 5km-rutor som innehåller med mycket moln färgats med rött ovch de rutor som är relativt fria från moln fått en grön färg</p>
+
+<img title="Sentinel2-bild från 2018-05-19" src="https://user-images.githubusercontent.com/26382924/84281803-4ce84f00-ab39-11ea-84ff-dd64a580e4a5.png" width="300px">
 
 ## Installation
 ### Installera Widget
@@ -157,7 +160,7 @@ Bildtjänsten med Sentineldata kräver inloggning. För att slippa ange inloggni
 <a href="https://enterprise.arcgis.com/en/portal/latest/use/widgets-tab.htm">Allmänt om att lägga till widgets i Web Appbuilder.</a><br>
 HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den. 
 När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar. 
-Konfiguraitonen har JSON struktur. Parametrar att konfigurera:
+Konfigurationen har JSON struktur. Parametrar att konfigurera:
 - InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data. Om man inte går via egen proxy anges "url":"https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
 - ResultLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data. Om man inte går via egen proxy anges "url":"https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
 - HistogramApi - sökväg till webapi som används av Bildväljaren. Här anges "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/"
