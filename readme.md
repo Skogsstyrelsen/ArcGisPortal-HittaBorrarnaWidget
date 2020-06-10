@@ -38,6 +38,109 @@
 
 ### Bildtjänsten Sentinel2_2_0
 <p>Analysen bygger på data från satelliten Sentinel-2. Dessa data laddas dagligen ner till Skogsstyrelsen och görs tillgängliga via en bildtjänst med namnet Sentinel2_2_0. Som regel är nya uppdaterade data från gårdagens satellitpassager över Sverige på plats kl 09:30 dagen efter. Informationen om andelen moln är då samtidigt uppdaterade i en databas.</p>
+<p>Spektralbanden från Sentinel-2 är i tjänsten ordnade i en ordningsföljd som i huvudsak beror av pixelstorleken i originaldata.<br>Bildtjänsten Sentinel2_2_0 har följande bandordning:
+<table style="width:100%">
+  <tr>
+    <td><b>Bandnummer i bildtjänsten</b></td>
+    <td><b>Motsvarar spektralband</b></td>
+    <td><b>Min våglängd (nm)</b></td>
+    <td><b>Max våglängd (nm)</b></td>
+    <td><b>Pixelstorlek (m)</b></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>B2-Blue</td>
+    <td>458</td>
+    <td>522</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>B3-Green</td>
+    <td>543</td>
+    <td>577</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>B4-Red</td>
+    <td>650</td>
+    <td>680</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>B8-NIR</td>
+    <td>784</td>
+    <td>899</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>B5-RE1</td>
+    <td>698</td>
+    <td>712</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>B6-RE2</td>
+    <td>733</td>
+    <td>747</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>B7-RE3</td>
+    <td>773</td>
+    <td>793</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>B8A-RE4</td>
+    <td>855</td>
+    <td>875</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>B11-SWIR1</td>
+    <td>1565</td>
+    <td>1655</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>B12-SWIR2</td>
+    <td>2100</td>
+    <td>2280</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>B1-Coast/Aerosol</td>
+    <td>433</td>
+    <td>453</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>B9-Water vapour</td>
+    <td>935</td>
+    <td>955</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>SCL-Cloud layer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>20</td>
+  </tr>
+</table>
+</p>
+  
 
 ### Metadata om moln från webapi
 <p>Varje gång nya data från Sentinel-2 kommit in till Skogsstyrelsen så görs en beräkning av andelen moln. Det görs i ett rutmönster över hela landet där varje ruta är 5x5 km. Informationen i dessa rutor används för att skapa staplarna som visualiseras i denna widget.</p>
@@ -85,14 +188,14 @@ För varje rasterfunktion som ska vara tillgänglig anges:
 
 <img title="Bildvaljare" src="https://user-images.githubusercontent.com/26382924/84247457-6d4be580-ab08-11ea-988f-67c4897c7fd9.PNG" width="650px">
 
-- Verktyget består av två flikar; 'Före bild' och 'Efter bild'.
-- Under respektive flik visas en graf med datum på x-axeln samt antal av ett valbart attribut på y-axeln.
+- Verktyget består av två flikar; 'Före bild' och 'Efter bild'. 
+- Under respektive flik visas en graf med datum på x-axeln samt antal av ett valbart attribut på y-axeln. Grafen visar staplar som representerar ett datum där det finns en bild tillgänglig - men bara inom den aktuella kartutbredningen som för tillfället visas i kartfönstret. Stapelns höjd beror på vilket attribut som användaren valt att visa.
 - För att ändra vilket attribut som ska visas, använd menyn till höger ovanför grafen. Följande attribut visas i menyn:
-  - Antal indexrutor: Antal 5km-rutor i aktuellt extent
-  - Max indexrutor: Största möjliga antal rutor i valt extent
-  - Täckning: Täckning i procent (antal/max antal)
-  - Summa bra data: Vägd summa av de bilder med låg molnighet, lågt istäcke och snötäcke mm. i aktuell utbredning i kartan. Ett högt värde kan alltså tolkas som att den aktuella utbredningen i kartan innehåller många relativt klara bilder utan moln.
-  - Medel bra data: (sumBraData / antalIndexrutor)
+  - **Summa bra data**: (Default.) Vägd summa av de bilder med låg molnighet, lågt istäcke och snötäcke m.m. inom aktuell utbredning i kartan. Ett högt värde kan alltså tolkas som att den aktuella utbredningen i kartan innehåller många relativt klara bilder utan moln.
+  - **Antal indexrutor**: Antal 5km-rutor i aktuellt extent
+  - **Max indexrutor**: Största möjliga antal rutor i valt extent
+  - **Täckning**: Täckning i procent (antal/max antal)
+  - **Medel bra data**: (sumBraData / antalIndexrutor)
 - Zooma i grafen genom att dra på grafytan med vänster musknapp intryckt. Zomma ut genom att högerklicka i grafytan.
 
 <table style="width:100%">
@@ -117,30 +220,37 @@ För varje rasterfunktion som ska vara tillgänglig anges:
 
 #### Method:
 Parametern styr vilken typ av data som returneras till klienten
-- Colormap (default). 
+- *Colormap* (default). 
   - Räknar om analysen till ett värde värde mellan 0 och 255
   - Returnerar resultatet som en 8-bitars (u8) RGB-bild enligt färgskalan i bilden nedan
-- Raw (inte för display utan snarare för vidare bearbetning)
+- *Raw* (inte för display utan snarare för vidare bearbetning)
   - Detta är analysen precis som den ser ut från differensen mellan de båda bilderna utan någon skalering.
   - Returnerar det råa resultatet som en 32-bitars float (f32) där värdena löper mellan -2.0 och 2.0.
-- Grayscale
+- *Grayscale*
   - Räknar om analysen till ett värde värde mellan 0 och 255
   - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255
 #### Translation:
-Parametern gör det möjligt att välja om de bilder som ingår i analysen ska mtachas till varandra geometriskt. Detta är oftast nödvändigt för att analysen ska få den skärpa som behövs.
-- On (default)
+Parametern gör det möjligt att välja om de bilder som ingår i analysen ska matchas till varandra geometriskt. Data från Sentinel-2 dras tyvärr med en geometrisk förskjtning mellan bilderna som oftast gör att translatikonen är nödvändig. Detta förbättrar skärpan i analysen.
+- *On* (default)
   - Geometrisk korrigering utförs
-- Off
+- *Off*
   - Ingen geometrisk korrigering utförs.
 #### Vegetation Index:
-- NDVI
-- SAVI
+Parametern styr vad som ska beräknas i varje satellitbild och som sedan skillnaderna ska baseras på 
+- *NDVI* (Default) Normalised Difference Vegetation Index
+- *SAVI* Soil Adjusted Vegetation Index
 #### Soil:
-- Numerisk värde mellan 0.0 och 1.0
+Detta värde används endast om *Vegetation Index* ovan har angivits till SAVI
+- Decimalt värde mellan 0.0 och 1.0. Oftast hamnar ett bra värde mellan 0.3 och 0.5
 #### Radnorm:
-- Regr
-- Hist
+Pixelvärdena i satellitdatat kan skilja sig åt något även om det i praktiken inte finns några större skillnader mellan objekten på marken. Oftast beror detta på skillnader i atmosfäriska som ljuset ska passera genom innan det når sensorn i satelliten, men det kan också bero på olika kalibreringar som satellitägaren utfört. Parametern *Radnorm* kompenserar för dessa skillnader.
+- *Regr* (Default)
+  - Kompensationen sker genom att matcha skillnaderna med hjälp av en iterativ regressionsanalys. 30% av pixlarna med de största skillnaderna kastas bort i varje iteration.
+  - Denna metod är mer känslig för geometriska skillnader än vad histogrammatchningsmetoden är.
+- *Hist*
+  - Kompensationen sker här genom en iterativ histogrammatchning. På samma sätt som ovan så kastas 30% av pixlarna med störst skillnader bort i varje iteration.
 #### NIR Band:
+För en korrekt beräkning av NDVI och SAVI måste rätt spektralband används.
 - Numerisk värde mellan 1 och 12
 #### Red Band:
 - Numeriskt värde mellan 1 och 12
