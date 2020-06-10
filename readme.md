@@ -58,6 +58,10 @@
 - Zooma i grafen genom att dra på grafytan med vänster musknapp intryckt. Zomma ut genom att högerklicka i grafytan.
 - För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen.
 
+### Valbara parametrar
+
+Här visas de parametrar som är valbara i förändringsanalysen. 'Före bild' och 'Efter bild' är obligatoriska, alla övriga parametrar är valbara.
+
 ## Licens
 
 This project is licensed under the terms of the Apache License 2.0.
