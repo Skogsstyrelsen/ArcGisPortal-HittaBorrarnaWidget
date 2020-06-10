@@ -184,14 +184,17 @@ För varje rasterfunktion som ska vara tillgänglig anges:
 
 - Lagerlistan visar de lager i kartan som är nödvändiga för att utföra analysen.
 - Aktivera/avaktivera kartlager genom att klicka i respektive checkbox.
-- I höger kolumn finns menyer för den rasterfunktion som ska användas. För Sentinel lagret är detta endast visningslägen, dvs vilken rendering lagret ska ha för att visa före och efter bild. För lagret 'Förändringsanalys' väljs den rasterfunktion som ska användas vid förändringsanalysen.
+- I höger kolumn finns menyer för den rasterfunktion som ska användas. För Sentinel lagret är detta endast visningslägen, dvs vilken rendering lagret ska ha för att visa före och efter bild. För lagret <i>Förändringsanalys</i> väljs den rasterfunktion som ska användas vid förändringsanalysen.
 
 ### Bildväljare
 <p>Bildväljaren är menat som ett verktyg för att underlätta att välja så bra bilder som möjligt för differensanalysen. En bra bild är att betrakta som en bild med minimala visuella 'störningar' så som moln, molnskugga, iskristaller, dimma, snötäcke mm. Vidare så spelar också bildernas datum in i analysen, både tidsspannet mellan bilderna och vilken årstid bilderna togs eftersom detta direkt påverkar vegationsindex.</p>
 
 <img title="Bildvaljare" src="https://user-images.githubusercontent.com/26382924/84247457-6d4be580-ab08-11ea-988f-67c4897c7fd9.PNG" width="650px">
 
-- Verktyget består av två flikar; 'Före bild' och 'Efter bild'. 
+- Verktyget består av två flikar; <i>Före bild</i> och <i>Efter bild</i>.
+  - Den flik som är aktiv bestämmer både vilken bild som kommer att visas i kartfönstret men också vilken bild det är möjligt att välja ett datum för.
+  - Med *Före bild* avses den bild som har det äldsta datumet.
+  - Med *Efter bild* avses den bild som har det senaste datumet.
 - Under respektive flik visas en graf med datum på x-axeln samt antal av ett valbart attribut på y-axeln. Grafen visar staplar som representerar ett datum där det finns en bild tillgänglig - men bara inom den aktuella kartutbredningen som för tillfället visas i kartfönstret. Stapelns höjd beror på vilket attribut som användaren valt att visa.
 - För att ändra vilket attribut som ska visas, använd menyn till höger ovanför grafen. Följande attribut visas i menyn:
   - **Summa bra data**: (Default.) Vägd summa av de bilder med låg molnighet, lågt istäcke och snötäcke m.m. inom aktuell utbredning i kartan. Ett högt värde kan alltså tolkas som att den aktuella utbredningen i kartan innehåller många relativt klara bilder utan moln.
@@ -212,12 +215,12 @@ För varje rasterfunktion som ska vara tillgänglig anges:
   </tr>
 </table>
 
-- För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen.
+- För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen. Samma procedur måste upprepas för både *Före bild* och *Efter bild*.
 <img title="ValjStapelFore" src="https://user-images.githubusercontent.com/26382924/84268595-31c11380-ab28-11ea-8141-ea1587d8674c.PNG" width="500px">
 
 
 ### Valbara parametrar
-<p>Här visas de parametrar som är valbara i förändringsanalysen. Här finns inte 'Före bild' och 'Efter bild' eftersom de är obligatoriska, men all övriga parametrar har default värden som kan ändras.</p>
+<p>Här visas de parametrar som är valbara i förändringsanalysen. Här finns inte <i>Före bild</i> och <i>Efter bild</i> eftersom de är obligatoriska, men alla övriga parametrar har default värden som kan ändras.</p>
 
 <img title="ValbaraPrametrar" src="https://user-images.githubusercontent.com/26382924/84248553-e435ae00-ab09-11ea-8824-41985439008c.PNG" width="650px">
 
