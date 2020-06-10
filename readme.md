@@ -59,8 +59,31 @@
 - För att välja bild, klicka på önskad stapel i grafen. Datumet visas då i fältet under grafen.
 
 ### Valbara parametrar
+<p>Här visas de parametrar som är valbara i förändringsanalysen. Här finns inte 'Före bild' och 'Efter bild' eftersom de är obligatoriska, men all övriga parametrar har default värden som kan ändras.</p>
 
-Här visas de parametrar som är valbara i förändringsanalysen. 'Före bild' och 'Efter bild' är obligatoriska, alla övriga parametrar är valbara.
+<img title="ValbaraPrametrar" src="https://user-images.githubusercontent.com/26382924/84248553-e435ae00-ab09-11ea-8824-41985439008c.PNG" width="650px">
+
+- Metod
+  - Colormap,
+  - Raw
+  - Greyscale
+-Translation
+  - On
+  - Off
+-Vegetation Index
+  - NDVI
+  - SAVI
+Soil
+  - Numerisk värde mellan 0.0 och 1.0
+- Radnorm
+  - Regr
+  - Hist
+- NIR Band
+  - Numerisk värde mellan 1 och 12
+- Red Band
+  - Numeriskt värde mellan 1 och 12
+
+
 
 ## Licens
 
