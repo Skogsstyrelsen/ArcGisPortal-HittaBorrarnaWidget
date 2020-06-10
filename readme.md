@@ -64,9 +64,15 @@
 <img title="ValbaraPrametrar" src="https://user-images.githubusercontent.com/26382924/84248553-e435ae00-ab09-11ea-8824-41985439008c.PNG" width="650px">
 
 - Metod
-  - Colormap,
-  - Raw
-  - Greyscale
+  - Colormap (default). 
+    - Räknar om analysen till ett värde värde mellan 0 och 255
+    - Returnerar resultatet som en 8-bitars (u8) RGB-bild enligt färgskalan i bilden nedan
+  - Raw (inte för display utan snarare för vidare bearbetning)
+    - Detta är analysen precis som den ser ut från differensen mellan de båda bilderna utan någon skalering.
+    - Returnerar det råa resultatet som en 32-bitars float (f32) där värdena löper mellan -2.0 och 2.0.
+  - Grayscale
+    - Räknar om analysen till ett värde värde mellan 0 och 255
+    - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255
 - Translation
   - On
   - Off
