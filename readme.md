@@ -63,7 +63,7 @@
 
 <img title="ValbaraPrametrar" src="https://user-images.githubusercontent.com/26382924/84248553-e435ae00-ab09-11ea-8824-41985439008c.PNG" width="650px">
 
-#### Metod
+#### Method:
 Parametern styr vilken typ av data som returneras till klienten
 - Colormap (default). 
   - Räknar om analysen till ett värde värde mellan 0 och 255
@@ -74,23 +74,23 @@ Parametern styr vilken typ av data som returneras till klienten
 - Grayscale
   - Räknar om analysen till ett värde värde mellan 0 och 255
   - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255
-#### Translation
+#### Translation:
 Parametern gör det möjligt att välja om de bilder som ingår i analysen ska mtachas till varandra geometriskt. Detta är oftast nödvändigt för att analysen ska få den skärpa som behövs.
 - On (default)
   - Geometrisk korrigering utförs
 - Off
   - Ingen geometrisk korrigering utförs.
-#### Vegetation Index
+#### Vegetation Index:
 - NDVI
 - SAVI
-#### Soil
+#### Soil:
 - Numerisk värde mellan 0.0 och 1.0
-#### Radnorm
+#### Radnorm:
 - Regr
 - Hist
-#### NIR Band
+#### NIR Band:
 - Numerisk värde mellan 1 och 12
-#### Red Band
+#### Red Band:
 - Numeriskt värde mellan 1 och 12
 
 ## Licens
