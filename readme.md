@@ -270,13 +270,15 @@ Pixelvärdena i satellitdatat kan skilja sig åt något även om det i praktiken
 #### NIR Band:
 För en korrekt beräkning av NDVI och SAVI måste rätt spektralband används. För en korrekt beräkning av dessa vegetationsindex måste *B8-NIR* och *B4-RED* användas (se tabellen ovan). Värdena bör inte ändras.
 - Numeriskt värde mellan 1 och 12. (Default 4.)
-- Band 13 ska aldrig användas. Det innehåller en tematisk klassning av molnen.
+- Band 13 i bildtjänsten ska aldrig användas. Det innehåller en tematisk klassning av molnen.
 #### Red Band:
 - Numeriskt värde mellan 1 och 12. (Default 3.)
-- Band 13 ska aldrig användas. Det innehåller en tematisk klassning av molnen.
+- Band 13 i bildtjänsten ska aldrig användas. Det innehåller en tematisk klassning av molnen.
 
 ## Licens
 
 This project is licensed under the terms of the Apache License 2.0.
 
-<a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/villkor-for-nyttjande-av-skogsstyrelsens-kartdatabaser/">Villkor för nyttjande av Skogssatyrelsens geodata.</a>
+<a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/villkor-for-nyttjande-av-skogsstyrelsens-kartdatabaser/">Villkor för nyttjande av Skogsstyrelsens geodata.</a>
+
+Villkoren för nyttjande av bilder från Sentinel-2 från Copernicus-programmet framgår av pdf-dokumentet: <a href="https://scihub.copernicus.eu/twiki/pub/SciHubWebPortal/TermsConditions/TC_Sentinel_Data_31072014.pdf">Terms and conditions for the use and distribution of sentinel data.</a> I korthet säger dokumentet att man har full rätt att både nyttja och distribuera data men källan ska alltid anges genom att t.ex. för bilder tagna 2020 skriva **©Copernicus data 2020**
