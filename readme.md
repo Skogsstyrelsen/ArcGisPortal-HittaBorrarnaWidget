@@ -6,9 +6,9 @@
 <p>Exemplet nedan visar ett område där förändringen mellan två bilder analyserats.</p>
 <table style="width:100%">
   <tr>
-    <td><img title="Sentinel2-bild från 2018-05-19" src="https://user-images.githubusercontent.com/26382924/84134312-ade42a00-aa48-11ea-998f-3645ad10d843.png" width="300px"></td>
-    <td><img title="Sentinel2-bild från 2019-05-29" src="https://user-images.githubusercontent.com/26382924/84134904-8b9edc00-aa49-11ea-8403-d27d81596937.png" width="300px"></td>
-    <td><img title="Analys mellan 2018-05-19 och 2019-05-29" src="https://user-images.githubusercontent.com/26382924/84135070-ca349680-aa49-11ea-8e39-a559c1525d87.png" width="300px"></td>
+    <td><img title="Sentinel2-bild från 2018-05-19" src="https://user-images.githubusercontent.com/26382924/84357717-6b485c00-abc6-11ea-9e9d-e4fdc0ed7c61.png" width="300px"></td>
+    <td><img title="Sentinel2-bild från 2019-05-29" src="https://user-images.githubusercontent.com/26382924/84357714-6aafc580-abc6-11ea-8b96-52c82f234400.png" width="300px"></td>
+    <td><img title="Analys mellan 2018-05-19 och 2019-05-29" src="https://user-images.githubusercontent.com/26382924/84357684-5f5c9a00-abc6-11ea-8e00-32e195269ff9.png" width="300px"></td>
   </tr>
   <tr>
     <td>Sentinel2-bild från 2018-05-19</td>
@@ -23,29 +23,30 @@
 
 ## Innehållsförteckning
 
-- [Hittaborrarna Widget](#hittaborrarna-widget)
-    - [En widget för förändringsanalys mellan två rasterbilder<br>](#en-widget-för-förändringsanalys-mellan-två-rasterbilderbr)
-  - [Innehållsförteckning](#innehållsförteckning)
-  - [Systemkrav](#systemkrav)
-  - [Indata](#indata)
-    - [Bildtjänsten Sentinel2_2_0](#bildtjänsten-sentinel2_2_0)
-    - [Metadata om moln från webapi](#metadata-om-moln-från-webapi)
-  - [Installation](#installation)
-    - [Installera Widget](#installera-widget)
-    - [Installera Proxy för Portal](#installera-proxy-för-portal)
-    - [Lägga till och konfigurera Widget](#lägga-till-och-konfigurera-widget)
-  - [Användning](#användning)
-    - [Kartlager](#kartlager)
-    - [Bildväljare](#bildväljare)
-    - [Valbara parametrar](#valbara-parametrar)
-      - [Method:](#method)
-      - [Translation:](#translation)
-      - [Vegetation Index:](#vegetation-index)
-      - [Soil:](#soil)
-      - [Radnorm:](#radnorm)
-      - [NIR Band:](#nir-band)
-      - [Red Band:](#red-band)
-  - [Licens](#licens)
+- [Systemkrav](#systemkrav)
+- [Friskrivning](#friskrivning)
+- [Indata](#indata)
+  - [Bildtjänsten Sentinel2_2_0](#bildtjänsten-sentinel2_2_0)
+  - [Metadata om moln från webapi](#metadata-om-moln-från-webapi)
+- [Installation](#installation)
+  - [Installera Widget](#installera-widget)
+  - [Installera Proxy för Portal](#installera-proxy-för-portal)
+  - [Lägga till och konfigurera Widget](#lägga-till-och-konfigurera-widget)
+- [Användning](#användning)
+  - [Kartlager](#kartlager)
+  - [Bildväljare](#bildväljare)
+  - [Valbara parametrar](#valbara-parametrar)
+  - [Method:](#method)
+  - [Translation:](#translation)
+  - [Vegetation Index:](#vegetation-index)
+  - [Soil:](#soil)
+  - [Radnorm:](#radnorm)
+  - [NIR Band:](#nir-band)
+  - [Red Band:](#red-band)
+- [Licens](#licens)
+
+## Friskrivning
+
 
 ## Systemkrav
 - ArcGIS portal 10.7.1 med Web App Builder.
