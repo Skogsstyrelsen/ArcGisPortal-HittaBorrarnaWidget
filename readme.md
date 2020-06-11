@@ -171,7 +171,7 @@ Skogsstyrelsen tar inte ansvar för att resultatet av en utförd förändringsan
 
 ### Metadata om moln från webapi
 <p>Varje gång nya data från Sentinel-2 kommit in till Skogsstyrelsen så görs en beräkning av andelen moln. Det görs i ett rutmönster över hela landet där varje ruta är 5x5 km. Informationen i dessa rutor lagras i en databastabell och används för att skapa staplarna som visualiseras i denna widget.</p>
-<p>I bilden nedan visualiseras informationen från tabellen vid ett specifikt datum. I det här fallet har de 5km-rutor som innehåller med mycket moln färgats med rött ovch de rutor som är relativt fria från moln fått en grön färg</p>
+<p>I bilden nedan visualiseras informationen från tabellen vid ett specifikt datum. I det här fallet har de 5km-rutor som innehåller mycket moln färgats med rött och de rutor som är relativt fria från moln fått en grön färg</p>
 
 <img title="Sentinel2-bild från 2018-05-19" src="https://user-images.githubusercontent.com/26382924/84281803-4ce84f00-ab39-11ea-84ff-dd64a580e4a5.png" width="300px">
 
@@ -181,16 +181,17 @@ Widget installeras i ArcGIS Portal som en Custom widget.
 - <a href="https://enterprise.arcgis.com/en/portal/latest/use/add-custom-widgets.htm"> Installera och registrera Widget i ArcGIS Portal.</a>
 
 ### Installera Proxy för Portal
-Bildtjänsten med Sentineldata kräver inloggning. För att slippa ange inloggningsuppgifter i en applikation kan anropen till tjänsten gå via en Forward Proxy som sätts upp i Portalen.
+Bildtjänsten med Sentinel-2data kräver inloggning. För att slippa ange inloggningsuppgifter i en applikation kan anropen till tjänsten gå via en Forward Proxy som sätts upp i Portalen.
 - <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/using-a-forward-proxy-server-with-portal-for-arcgis.htm">Installera och konfigurera Forward Proxy.</a>
+
 ### Lägga till och konfigurera Widget
 <a href="https://enterprise.arcgis.com/en/portal/latest/use/widgets-tab.htm">Allmänt om att lägga till widgets i Web Appbuilder.</a>
 
 HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den. 
-När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar. Konfigurationen har JSON struktur.
+När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalysen som avser barkborrar. Konfigurationen har JSON struktur.
 
 #### Parametrar att konfigurera:
-- InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.<br>Om man inte går via egen proxy anges
+- InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.<br>Om man inte går via egen proxy anges:
 
 ```json
 {
@@ -213,7 +214,7 @@ När man laddar ner widgeten från GitHub följer det med en config.json som del
   },
 ```
 #### Förifyllda parametrar:
-- analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringdsanalysen. Ger användaren möjlighet att välja vilken förändringsanalys som ska användas i widgeten (se [Kartlager](#kartlager)).
+- analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringsanalysen.<br>Ger användaren möjlighet att välja vilken förändringsanalys som ska användas i widgeten (se [Kartlager](#kartlager)).
 ```json
    "analysisRasterFunctions": [
     {
@@ -223,7 +224,7 @@ När man laddar ner widgeten från GitHub följer det med en config.json som del
     }
   ],
 ```
-- DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder. Ger användaren möjlighet att välja hur ingående bilder ska visas (se [Kartlager](#kartlager)).
+- DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder.<br>Ger användaren möjlighet att välja hur ingående bilder ska visas (se [Kartlager](#kartlager)).
 ```json
   "DisplayRasterFunctions": [
     {
@@ -254,7 +255,7 @@ För varje rasterfunktion som ska vara tillgänglig anges:
 
 - Lagerlistan visar de lager i kartan som är nödvändiga för att utföra analysen.
 - Aktivera/avaktivera kartlager genom att klicka i respektive checkbox.
-- I höger kolumn finns menyer för den rasterfunktion som ska användas. För Sentinel lagret är detta endast visningslägen, dvs vilken rendering lagret ska ha för att visa före och efter bild. För lagret <i>Förändringsanalys</i> väljs den rasterfunktion som ska användas vid förändringsanalysen.
+- I höger kolumn finns menyer för den rasterfunktion som ska användas. För Sentinel-2lagret är detta endast visningslägen, dvs vilken rendering lagret ska ha för att visa *Före bild* och *Efter bild*. För lagret <i>Förändringsanalys</i> väljs den rasterfunktion som ska användas vid förändringsanalysen.
 
 ### Bildväljare
 <p>Bildväljaren är menat som ett verktyg för att underlätta att välja så bra bilder som möjligt för differensanalysen. En bra bild är att betrakta som en bild med minimala visuella 'störningar' så som moln, molnskugga, iskristaller, dimma, snötäcke mm. Vidare så spelar också bildernas datum in i analysen, både tidsspannet mellan bilderna och vilken årstid bilderna togs eftersom detta direkt påverkar vegationsindex.</p>
