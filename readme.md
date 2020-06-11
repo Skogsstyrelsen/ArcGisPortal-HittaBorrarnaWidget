@@ -304,13 +304,14 @@ Parametern styr vilken typ av data som returneras till klienten
   - Detta är analysen precis som den ser ut från differensen mellan de båda bilderna utan någon skalering.
   - Returnerar det råa resultatet som en 32-bitars float (f32) där värdena löper mellan -2.0 och 2.0.
 - *Grayscale*
-  - Räknar om analysen till ett värde värde mellan 0 och 255
-  - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255
+  - Räknar om analysen till ett värde värde mellan 0 och 255.
+  - Returnerar resultatet som en 8-bitars integer (u8) där värdena löper mellan 0 och 255.
+  - Områden med låga pixelvärden (mörka) är områden med stor negativ förändring av vegetationsindexet i den senaste bilden.
 
 <table style="width:100%">
   <tr>
     <td><img title="Colorbar" src="https://user-images.githubusercontent.com/26382924/84366632-6938ca00-abd3-11ea-85a2-9386fe25fbf4.png" height="300px"></td>
-    <td>Bilden visar färgskalan som används när parametern är satt till <i>Colormap</i>.<br> Färgerna har optimerats för att lättare kunna urskilja förändringar sominnebär ett lägre<br>vegetationsindex i den senaste bilden. Blåa färger indikerar ingen förändring medan gula färger<br>visar på en stor negativ förändring av vegetationsindexet i den senaset bilden (<i>Efter bilden<i>).</td>
+    <td>Bilden visar färgskalan som används när parametern är satt till <i>Colormap</i>.<br> Färgerna har optimerats för att lättare kunna urskilja förändringar sominnebär ett lägre<br>vegetationsindex i den senaste bilden. Blåa färger indikerar ingen förändring medan gula färger<br>visar på en stor negativ förändring av vegetationsindexet i den senaste bilden (<i>Efter bilden<i>).</td>
   </tr>
 </table>
 
