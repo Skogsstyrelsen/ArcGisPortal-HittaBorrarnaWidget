@@ -164,7 +164,7 @@ När man laddar ner widgeten från GitHub följer det med en config.json som del
 Konfigurationen har JSON struktur. Parametrar att konfigurera:
 - InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data. Om man inte går via egen proxy anges "url":"https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
 - ResultLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data. Om man inte går via egen proxy anges "url":"https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
-- HistogramApi - sökväg till webapi som används av [Bildväljaren](#bildvaljare). Här anges "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/"
+- HistogramApi - sökväg till webapi som används av [Bildväljaren](###Bildväljare). Här anges "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/"
 - apiKey - api nyckel för HistogramApi. Erhålls när man ansöker om tillgång till API.
 
 Förifyllda parametrar:
