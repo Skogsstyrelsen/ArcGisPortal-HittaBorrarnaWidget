@@ -194,60 +194,58 @@ När man laddar ner widgeten från GitHub följer det med en config.json som del
 - InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.<br>Om man inte går via egen proxy anges:
 
 ```json
-{
-  "InputLayer": {
+"InputLayer": {
     "url": "https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
-  },
-  ```
+}
+```
 - ResultLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.<br>Om man inte går via egen proxy anges:  
 ```json
-  "ResultLayer": {
-    "url": "https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
-  },
+"ResultLayer": {
+  "url": "https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
+}
 ```
 - HistogramApi - sökväg till webapi som används av [Bildväljaren](#bildväljare).
 - apiKey - api nyckel för HistogramApi. Erhålls när man ansöker om tillgång till API.
 ```json
-  "HistogramApi": {
-    "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/",
-    "apiKey": ""
-  },
+"HistogramApi": {
+  "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/",
+  "apiKey": ""
+}
 ```
 #### Förifyllda parametrar:
 - analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringsanalysen.<br>Ger användaren möjlighet att välja vilken förändringsanalys som ska användas i widgeten (se [Kartlager](#kartlager)).
 ```json
-   "analysisRasterFunctions": [
-    {
-      "name": "SKS_Barkborre",
-      "displayName": "SKS Barkborre",
-      "useAsDefault": true
-    }
-  ],
+"analysisRasterFunctions": [
+  {
+    "name": "SKS_Barkborre",
+    "displayName": "SKS Barkborre",
+    "useAsDefault": true
+  }
+]
 ```
 - DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder.<br>Ger användaren möjlighet att välja hur ingående bilder ska visas (se [Kartlager](#kartlager)).
 ```json
-  "DisplayRasterFunctions": [
-    {
-      "name": "SKS_SWIR1",
-      "displayName": "SWIR1 - Mellaninfraröda färger",
-      "useAsDefault": false
-    },
-    {
-      "name": "SJV_Jordbruksaktivitet",
-      "displayName": "Jordbruksaktivitet",
-      "useAsDefault": false
-    },
-    {
-    
+"DisplayRasterFunctions": [
+  {
+    "name": "SKS_SWIR1",
+    "displayName": "SWIR1 - Mellaninfraröda färger",
+    "useAsDefault": false
+  },
+  {
+    "name": "SJV_Jordbruksaktivitet",
+    "displayName": "Jordbruksaktivitet",
+    "useAsDefault": false
+  }
+]
 ```
 
 Det går att ange flera rasterfunktioner både för visning och analys. Dock är det inte säkert att alla fungera med den här widgeten.
 Det går att se vilka rasterfunktioner som är tillgängliga genom att se i tjänstens "child resources", RasterFunctionInfos  https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer/rasterFunctionInfos
 
 För varje rasterfunktion som ska vara tillgänglig anges:
-- ```name``` - rasterfunktionens namn i tjänsten ("name"). OBS! Var noga med stora och små bokstäver
-- ```displayName``` - Namn som visas i widgeten under Kartlager.
-- ```useAsDefault``` - Sätt till ```true``` för den rasterfunktion som ska visas som default, annars ```false```.
+- `name` - rasterfunktionens namn i tjänsten ("name"). OBS! Var noga med stora och små bokstäver
+- `displayName` - Namn som visas i widgeten under Kartlager.
+- `useAsDefault` - Sätt till `true` för den rasterfunktion som ska visas som default, annars `false`.
 
 ## Användning
 ### Kartlager
