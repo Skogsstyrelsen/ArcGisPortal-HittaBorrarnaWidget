@@ -157,7 +157,8 @@ Widget installeras i ArcGIS Portal som en Custom widget.
 Bildtjänsten med Sentineldata kräver inloggning. För att slippa ange inloggningsuppgifter i en applikation kan anropen till tjänsten gå via en Forward Proxy som sätts upp i Portalen.
 - <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/using-a-forward-proxy-server-with-portal-for-arcgis.htm">Installera och konfigurera Forward Proxy.</a>
 ### Lägga till och konfigurera Widget
-<a href="https://enterprise.arcgis.com/en/portal/latest/use/widgets-tab.htm">Allmänt om att lägga till widgets i Web Appbuilder.</a><br>
+<a href="https://enterprise.arcgis.com/en/portal/latest/use/widgets-tab.htm">Allmänt om att lägga till widgets i Web Appbuilder.</a>
+
 HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den. 
 När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar. 
 Konfigurationen har JSON struktur. Parametrar att konfigurera:
@@ -277,3 +278,4 @@ För en korrekt beräkning av NDVI och SAVI måste rätt spektralband används. 
 ## Licens
 
 This project is licensed under the terms of the Apache License 2.0.
+<a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/villkor-for-nyttjande-av-skogsstyrelsens-kartdatabaser/">Villkor för nyttjande av Skogssatyrelsens geodata.</a>
