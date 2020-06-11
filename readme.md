@@ -180,16 +180,34 @@ Bildtjänsten med Sentineldata kräver inloggning. För att slippa ange inloggni
 <a href="https://enterprise.arcgis.com/en/portal/latest/use/widgets-tab.htm">Allmänt om att lägga till widgets i Web Appbuilder.</a>
 
 HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den. 
-När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar. 
-Konfigurationen har JSON struktur. Parametrar att konfigurera:
-- InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data. Om man inte går via egen proxy anges "url":"https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
-- ResultLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data. Om man inte går via egen proxy anges "url":"https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
-- HistogramApi - sökväg till webapi som används av [Bildväljaren](#bildväljare). Här anges "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/"
-- apiKey - api nyckel för HistogramApi. Erhålls när man ansöker om tillgång till API.
+När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalys barkborrar. Konfigurationen har JSON struktur.
 
-Förifyllda parametrar:
-- analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringdsanalysen. Ger användaren möjlighet att välja vilken förändringsanalys som ska användas i widgeten (sektion Kartlager).
-- DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder. Ger användaren möjlighet att välja hur ingående bilder ska visas (sektion Kartlager).
+#### Parametrar att konfigurera:
+- InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.<br>Om man inte går via egen proxy anges
+
+```json
+{
+  "InputLayer": {
+    "url": "https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
+  },
+  ```
+- ResultLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.<br>Om man inte går via egen proxy anges:  
+```json
+  "ResultLayer": {
+    "url": ""https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer"
+  },
+```
+- HistogramApi - sökväg till webapi som används av [Bildväljaren](#bildväljare).
+- apiKey - api nyckel för HistogramApi. Erhålls när man ansöker om tillgång till API.
+```json
+  "HistogramApi": {
+    "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/",
+    "apiKey": ""
+  },
+```
+#### Förifyllda parametrar:
+- analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringdsanalysen. Ger användaren möjlighet att välja vilken förändringsanalys som ska användas i widgeten (se [Kartlager](#kartlager)).
+- DisplayRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används för visning av bilder. Ger användaren möjlighet att välja hur ingående bilder ska visas (se [Kartlager](#kartlager)).
 
 Det går att ange flera rasterfunktioner både för visning och analys. Dock är det inte säkert att alla fungera med den här widgeten.
 Det går att se vilka rasterfunktioner som är tillgängliga genom att se i tjänstens "child resources", RasterFunctionInfos  https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer/rasterFunctionInfos
@@ -197,7 +215,7 @@ Det går att se vilka rasterfunktioner som är tillgängliga genom att se i tjä
 För varje rasterfunktion som ska vara tillgänglig anges:
 - name - rasterfunktionens namn i tjänsten ("name")
 - displayName - Namn som visas i widgeten under Kartlager.
-- useAsDefault - "true" visas som default, "false" visas inte som default.
+- useAsDefault - Sätt till ```true``` för den rasterfunktion som ska visas som default, annars ```false```.
 
 ## Användning
 ### Kartlager
