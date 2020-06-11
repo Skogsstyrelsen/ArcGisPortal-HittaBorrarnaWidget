@@ -278,4 +278,5 @@ För en korrekt beräkning av NDVI och SAVI måste rätt spektralband används. 
 ## Licens
 
 This project is licensed under the terms of the Apache License 2.0.
+
 <a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/villkor-for-nyttjande-av-skogsstyrelsens-kartdatabaser/">Villkor för nyttjande av Skogssatyrelsens geodata.</a>
