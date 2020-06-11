@@ -237,9 +237,9 @@ Det går att ange flera rasterfunktioner både för visning och analys. Dock är
 Det går att se vilka rasterfunktioner som är tillgängliga genom att se i tjänstens "child resources", RasterFunctionInfos  https://geodata.skogsstyrelsen.se/arcgis/rest/services/Swea/Sentinel2_2_0/ImageServer/rasterFunctionInfos
 
 För varje rasterfunktion som ska vara tillgänglig anges:
-- name - rasterfunktionens namn i tjänsten ("name")
-- displayName - Namn som visas i widgeten under Kartlager.
-- useAsDefault - Sätt till ```true``` för den rasterfunktion som ska visas som default, annars ```false```.
+- ```name``` - rasterfunktionens namn i tjänsten ("name"). OBS! Var noga med stora och små bokstäver
+- ```displayName``` - Namn som visas i widgeten under Kartlager.
+- ```useAsDefault``` - Sätt till ```true``` för den rasterfunktion som ska visas som default, annars ```false```.
 
 ## Användning
 ### Kartlager
