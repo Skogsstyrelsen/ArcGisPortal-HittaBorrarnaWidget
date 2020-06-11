@@ -46,7 +46,8 @@
 - [Licens](#licens)
 
 ## Friskrivning
-
+Skogsstyrelsen friskriver sig från eventuella felaktigheter i kod.<br>
+Skogsstyrelsen tar inte ansvar för att resultatet av en utförd förändringsanalys är korrekt.
 
 ## Systemkrav
 - ArcGIS portal 10.7.1 med Web App Builder.
@@ -208,6 +209,7 @@ För varje rasterfunktion som ska vara tillgänglig anges:
 
 ### Bildväljare
 <p>Bildväljaren är menat som ett verktyg för att underlätta att välja så bra bilder som möjligt för differensanalysen. En bra bild är att betrakta som en bild med minimala visuella 'störningar' så som moln, molnskugga, iskristaller, dimma, snötäcke mm. Vidare så spelar också bildernas datum in i analysen, både tidsspannet mellan bilderna och vilken årstid bilderna togs eftersom detta direkt påverkar vegationsindex.</p>
+<p>För att det ska vara möjligt att upptäcka eventuella angrepp av barkborre måste analysen baseras på ett tillräckligt stort tidsspann mellan de två två bilderna. Hur stort det spannet ska vara kan variera mycket - från ett antal veckor till ett antal månader. Kunskapen om vad det är som avgör hur snart granbarkborrens angrepp syns i data från satellitbilder håller på att byggas upp. Full förståelse och tillräcklig erfarenhet saknas förnärvarande.</p>
 
 <img title="Bildvaljare" src="https://user-images.githubusercontent.com/26382924/84247457-6d4be580-ab08-11ea-988f-67c4897c7fd9.PNG" width="650px">
 
