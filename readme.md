@@ -23,11 +23,29 @@
 
 ## Innehållsförteckning
 
-- [Systemkrav](#systemkrav)
-- [Indata](#indata)
-- [Installation](#installation)
-- [Användning](#anvandning)
-- [Licens](#licens)
+- [Hittaborrarna Widget](#hittaborrarna-widget)
+    - [En widget för förändringsanalys mellan två rasterbilder<br>](#en-widget-för-förändringsanalys-mellan-två-rasterbilderbr)
+  - [Innehållsförteckning](#innehållsförteckning)
+  - [Systemkrav](#systemkrav)
+  - [Indata](#indata)
+    - [Bildtjänsten Sentinel2_2_0](#bildtjänsten-sentinel2_2_0)
+    - [Metadata om moln från webapi](#metadata-om-moln-från-webapi)
+  - [Installation](#installation)
+    - [Installera Widget](#installera-widget)
+    - [Installera Proxy för Portal](#installera-proxy-för-portal)
+    - [Lägga till och konfigurera Widget](#lägga-till-och-konfigurera-widget)
+  - [Användning](#användning)
+    - [Kartlager](#kartlager)
+    - [Bildväljare](#bildväljare)
+    - [Valbara parametrar](#valbara-parametrar)
+      - [Method:](#method)
+      - [Translation:](#translation)
+      - [Vegetation Index:](#vegetation-index)
+      - [Soil:](#soil)
+      - [Radnorm:](#radnorm)
+      - [NIR Band:](#nir-band)
+      - [Red Band:](#red-band)
+  - [Licens](#licens)
 
 ## Systemkrav
 - ArcGIS portal 10.7.1 med Web App Builder.
