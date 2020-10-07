@@ -1,10 +1,12 @@
 define([
   "dojo/_base/declare",
   "dojo/request",
+  "dojo/request/registry",
   "dojo/Deferred"
-], function (declare, request, Deferred) {
+], function (declare, request, registry, Deferred) {
 
-  function getIndexRutor(baseUrl, wktPolygon, startDate, endDate, apiKey) {
+  function getIndexRutor(histogramConfig, wktPolygon, startDate, endDate) {
+    var baseUrl = histogramConfig.url;
     baseUrl = baseUrl.replace(/\/?$/, '/');
     var url = baseUrl + 'Raster/Scl/HistogramDateSummary';
     var query = {};
@@ -18,21 +20,15 @@ define([
         maxDatum: endDate.toUTCString()
       };
     }
-    return request(url, {
+    return registry.get(url, {
       handleAs: "json",
       query: query,
-      headers: {
-        "X-Requested-With": null,
-        "x-skogsstyrelsen-api-identity": apiKey
-      }
     });
-
-
   }
 
-  function getDates(baseUrl, wktPolygon) {
+  function getDates(histogramConfig, wktPolygon) {
     var deffered = new Deferred();
-    var url = baseUrl + 'Raster/Scl/HistogramDateSummary';
+    var url = histogramConfig.url + 'Raster/Scl/HistogramDateSummary';
     var query = {};
     if (wktPolygon) {
       query.extent = wktPolygon;

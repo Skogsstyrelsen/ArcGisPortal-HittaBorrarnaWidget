@@ -2,6 +2,30 @@
   font-size: 0.8rem;
 }
 
+.loader-container {
+  display: none;
+}
+
+.loader-container.is-active {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+}
+
+.app-loader {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 /*Loaders*/
 
 .layer-loader.active {
@@ -22,7 +46,8 @@
   padding: 10px;
 }
 
-.instructions ul, .instructions li {
+.instructions ul,
+.instructions li {
   font-size: 0.7rem;
 }
 
@@ -53,7 +78,9 @@ table.layer-list-table td>* {
   vertical-align: middle;
 }
 
-table.layer-list-table select, table.layer-list-table input, table.layer-list-table textarea {
+table.layer-list-table select,
+table.layer-list-table input,
+table.layer-list-table textarea {
   margin: 0;
   height: 1.8rem;
 }
@@ -85,11 +112,15 @@ table.layer-list-table #resultLayerHelpText {
   font-weight: bold;
 }
 
-.col.form-col input, .col.form-col select, .col.form-col textarea {
+.col.form-col input,
+.col.form-col select,
+.col.form-col textarea {
   height: 1.8rem;
 }
 
-.col.datum-input-col input, .col.datum-input-col select, .col.datum-input-col textarea {
+.col.datum-input-col input,
+.col.datum-input-col select,
+.col.datum-input-col textarea {
   height: 1.8rem;
 }
 
@@ -144,7 +175,8 @@ table.layer-list-table #resultLayerHelpText {
  * Licensed under MIT
  */
 
-.la-ball-clip-rotate, .la-ball-clip-rotate>div {
+.la-ball-clip-rotate,
+.la-ball-clip-rotate>div {
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -228,10 +260,12 @@ table.layer-list-table #resultLayerHelpText {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   50% {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -243,10 +277,12 @@ table.layer-list-table #resultLayerHelpText {
     -moz-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   50% {
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
   }
+
   100% {
     -moz-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -258,10 +294,12 @@ table.layer-list-table #resultLayerHelpText {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   50% {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
+
   100% {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -275,12 +313,14 @@ table.layer-list-table #resultLayerHelpText {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   50% {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -295,7 +335,8 @@ table.layer-list-table #resultLayerHelpText {
  * Licensed under MIT
  */
 
-.la-line-scale, .la-line-scale>div {
+.la-line-scale,
+.la-line-scale>div {
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -416,10 +457,14 @@ table.layer-list-table #resultLayerHelpText {
  */
 
 @-webkit-keyframes line-scale {
-  0%, 40%, 100% {
+
+  0%,
+  40%,
+  100% {
     -webkit-transform: scaleY(.4);
     transform: scaleY(.4);
   }
+
   20% {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
@@ -427,11 +472,15 @@ table.layer-list-table #resultLayerHelpText {
 }
 
 @-moz-keyframes line-scale {
-  0%, 40%, 100% {
+
+  0%,
+  40%,
+  100% {
     -webkit-transform: scaleY(.4);
     -moz-transform: scaleY(.4);
     transform: scaleY(.4);
   }
+
   20% {
     -webkit-transform: scaleY(1);
     -moz-transform: scaleY(1);
@@ -440,11 +489,15 @@ table.layer-list-table #resultLayerHelpText {
 }
 
 @-o-keyframes line-scale {
-  0%, 40%, 100% {
+
+  0%,
+  40%,
+  100% {
     -webkit-transform: scaleY(.4);
     -o-transform: scaleY(.4);
     transform: scaleY(.4);
   }
+
   20% {
     -webkit-transform: scaleY(1);
     -o-transform: scaleY(1);
@@ -453,12 +506,16 @@ table.layer-list-table #resultLayerHelpText {
 }
 
 @keyframes line-scale {
-  0%, 40%, 100% {
+
+  0%,
+  40%,
+  100% {
     -webkit-transform: scaleY(.4);
     -moz-transform: scaleY(.4);
     -o-transform: scaleY(.4);
     transform: scaleY(.4);
   }
+
   20% {
     -webkit-transform: scaleY(1);
     -moz-transform: scaleY(1);

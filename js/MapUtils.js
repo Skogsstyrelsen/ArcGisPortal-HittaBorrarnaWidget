@@ -157,7 +157,6 @@ define([
         rasterFunction.variableName = 'Raster';
         _this.resultLayer.setRenderingRule(rasterFunction, true);
         _this.rasterFunction = rasterFunction;
-        console.log(_this.resultLayer)
         _this.resultLayer.refresh();
       }
 

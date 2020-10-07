@@ -85,7 +85,7 @@ define([
 
       var _this = this;
       var wkt = _this.mapUtils.getMapExtentAsWktPolygon();
-      return HistogramService.getIndexRutor(_this.config.HistogramApi.url, wkt, null, null, _this.config.HistogramApi.apiKey);
+      return HistogramService.getIndexRutor(_this.config.HistogramApi, wkt, null, null);
     },
 
     toggleChartLoader: function (visible) {

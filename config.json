@@ -7,9 +7,17 @@
   },
   "HistogramApi": {
     "url": "",
-    "apiKey": ""
+    "apiKey": "",
+    "auth": {
+      "enabled": false,
+      "authority": "",
+      "clientId": "",
+      "clientSecret": "",
+      "scope": "",
+      "grantType": ""
+    }
   },
-   "analysisRasterFunctions": [
+  "analysisRasterFunctions": [
     {
       "name": "SKS_Barkborre",
       "displayName": "SKS Barkborre",
@@ -54,7 +62,7 @@
     },
     {
       "name": "SKS_SWIR2",
-     "displayName": "SWIR2 - Mellaninfraröda färger",
+      "displayName": "SWIR2 - Mellaninfraröda färger",
       "useAsDefault": false
     },
     {

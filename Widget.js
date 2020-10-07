@@ -7,6 +7,8 @@ define([
     './js/ChartController',
     './js/LayerListController',
     './js/RasterfunctionController',
+    './js/auth/authController',
+
     "https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/js/calcite-web.min.js",
     "jimu/loaderplugins/jquery-loader!https://code.jquery.com/jquery-3.3.1.min.js",
     'xstyle/css!https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/css/calcite-web.min.css',
@@ -22,6 +24,8 @@ define([
     ChartController,
     LayerListController,
     RasterfunctionController,
+    AuthController,
+
     Calcite,
     $) {
     //To create a widget, you need to derive from BaseWidget.
@@ -46,14 +50,19 @@ define([
 
       startup: function () {
         var _this = this;
+        _this.toggleWidgetLoader(true);
         try {
           this.setup();
           this.configureEsriMap(this.map);
+          if (this.CONFIG.HistogramApi.auth.enabled) {
+            AuthController.registerAuthentication(this.CONFIG.HistogramApi);
+          }
           LayerListController.configureAnalysisRasterfunctions(this.CONFIG.analysisRasterFunctions, this.updateAnalysisRasterfunction.bind(_this));
           LayerListController.configureDisplayRasterfunctions(this.CONFIG.DisplayRasterFunctions, _this.updateDisplayRasterfunction.bind(_this));
           var extentPolygon = this.MAPUTILS.getMapExtentAsWktPolygon();
-          HistogramService.getIndexRutor(this.CONFIG.HistogramApi.url, extentPolygon, null, null, this.CONFIG.HistogramApi.apiKey)
+          HistogramService.getIndexRutor(this.CONFIG.HistogramApi, extentPolygon, null, null)
             .then(function (jsonResp) {
+              _this.toggleWidgetLoader(false);
               _this.rasterfunctionController = new RasterfunctionController(_this.MAPUTILS);
               _this.rasterfunctionController.init();
 
@@ -79,6 +88,7 @@ define([
                       _this.setErrorMessage("Fel, kunde inte hämta bilder för angivet datum");
                     }
                   }, function (err) {
+                    _this.toggleWidgetLoader(false);
                     _this.setErrorMessage(err);
                   });
 
@@ -107,6 +117,7 @@ define([
                       _this.setErrorMessage("Fel, kunde inte hämta bilder för angivet datum");
                     }
                   }, function (err) {
+                    _this.toggleWidgetLoader(false);
                     _this.setErrorMessage(err);
                   });
 
@@ -182,10 +193,13 @@ define([
 
 
             }, function (err) {
+              _this.toggleWidgetLoader(false);
               _this.setErrorMessage(err);
             });
           this.inherited(arguments);
         } catch (error) {
+          _this.toggleWidgetLoader(false);
+          console.error(error);
           _this.setErrorMessage(error);
         }
       },
@@ -205,7 +219,10 @@ define([
           $("#errorAlert").removeClass('is-active');
 
         }
+      },
 
+      toggleWidgetLoader: function (show) {
+        show ? $("#appLoader").addClass('is-active') : $("#appLoader").removeClass('is-active');
       },
 
       configureEsriMap: function (esriMap) {
