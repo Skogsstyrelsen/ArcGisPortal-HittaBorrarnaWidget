@@ -7,7 +7,6 @@
   },
   "HistogramApi": {
     "url": "",
-    "apiKey": "",
     "auth": {
       "enabled": false,
       "authority": "",
