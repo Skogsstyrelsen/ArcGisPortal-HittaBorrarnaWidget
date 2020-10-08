@@ -10,8 +10,38 @@ define([
 ], function (declare, Evented, request, registry, xhr, Deferred, jwtDecode) {
 
 
-  function _getToken() {
-    if (typeof (Storage) !== "undefined") {
+
+
+  function _getNewToken(config) {
+    return _makeRequest(config.auth.authority, {
+      method: "POST",
+      handleAs: "json",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        authorization: 'Basic ' + btoa(
+          config.auth.clientId + ':' + config.auth.clientSecret
+        ),
+      },
+      data: {
+        scope: config.auth.scope,
+        grant_type: config.auth.grantType
+      }
+    });
+  }
+
+  function _forwardAuthenticatedRequest(url, opts, token) {
+    if (opts.headers) {
+      opts.headers.Authorization = 'Bearer ' + token;
+    } else {
+      opts.headers = {
+        Authorization: 'Bearer ' + token
+      }
+    }
+    return _makeRequest(url, opts);
+  }
+
+  function _getExistingToken() {
+    if (_storageEnabled()) {
       if (sessionStorage.access_token && !_hasExpired(sessionStorage.access_token)) {
         return sessionStorage.access_token;
       }
@@ -21,6 +51,14 @@ define([
 
   function _hasExpired(token) {
     return jwtDecode.decode(token).exp < new Date().getTime() / 1000;
+  }
+
+  function _storageEnabled() {
+    try {
+      return (typeof (Storage) !== "undefined" && window.sessionStorage);
+    } catch (error) {
+      return false;
+    }
   }
 
   function _checkRequiredKeys(config) {
@@ -51,58 +89,32 @@ define([
 
   }
 
+  function _makeRequest(url, opts) {
+    return xhr(url, opts);
+  }
+
   function registerAuthentication(config) {
     _checkRequiredKeys(config);
     registry.register(new RegExp(config.url), function (url, opts) {
       var deffered = new Deferred();
-      var existingToken = _getToken();
+      var existingToken = _getExistingToken();
       if (existingToken) {
-        if (opts.headers) {
-          opts.headers.Authorization = 'Bearer ' + existingToken;
-        } else {
-          opts.headers = {
-            Authorization: 'Bearer ' + existingToken
-          }
-        }
-        xhr(url, opts).then(function (res) {
-          deffered.resolve(res);
-        }, function (err) {
-          deffered.reject(err);
-        });
+        return _forwardAuthenticatedRequest(url, opts, existingToken);
       } else {
-        var secret = btoa(
-          config.auth.clientId + ':' + config.auth.clientSecret
-        );
-        var contentType = 'application/x-www-form-urlencoded';
-        request.post(config.auth.authority, {
-          handleAs: "json",
-          headers: {
-            'Content-Type': contentType,
-            authorization: 'Basic ' + secret,
-          },
-          data: {
-            scope: config.auth.scope,
-            grant_type: config.auth.grantType
-          }
-        }).then(function (res) {
-          sessionStorage.access_token = res.access_token;
-          if (opts.headers) {
-            opts.headers.Authorization = 'Bearer ' + res.access_token;
+        return _getNewToken(config).then(function (res) {
+          if (_storageEnabled()) {
+            sessionStorage.access_token = res.access_token;
           } else {
-            opts.headers = {
-              Authorization: 'Bearer ' + res.access_token
-            }
+            console.warn("Session storage ej tillgängligt, autentisering sker istället per anrop")
           }
-          xhr(url, opts).then(function (innerRes) {
-            deffered.resolve(innerRes);
-          }, function (err) {
-            deffered.reject(err);
-          });
+          return _forwardAuthenticatedRequest(url, opts, res.access_token)
         }, function (err) {
-          deffered.reject(err);
+          console.error(err);
+          deffered.reject("Misslyckad autentisering, kunde inte skapa token");
+          return deffered.promise;
         });
       }
-      return deffered.promise;
+
     });
   }
 
