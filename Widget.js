@@ -54,6 +54,7 @@ define([
         try {
           this.setup();
           this.configureEsriMap(this.map);
+          AuthController.register401Handler(this.CONFIG);
           if (this.CONFIG.HistogramApi.auth.enabled) {
             AuthController.registerAuthentication(this.CONFIG.HistogramApi);
           }

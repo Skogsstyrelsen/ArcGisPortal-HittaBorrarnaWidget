@@ -37,7 +37,7 @@ define([
         Authorization: 'Bearer ' + token
       }
     }
-    return _makeRequest(url, opts);
+    return _makeRequest(url, opts)
   }
 
   function _getExistingToken() {
@@ -115,12 +115,31 @@ define([
         });
       }
 
-    });
+    }, true);
+  }
+
+  function register401Handler(config) {
+    registry.register(new RegExp(config.url), function (url, opts) {
+      var deferred = new Deferred();
+      _makeRequest(url, opts).then(
+        function (res) {
+          deferred.resolve(res);
+        },
+        function (err) {
+          if (err && err.response && err.response.status && err.response.status === 401) {
+            deferred.reject("Autentisering misslyckades: " + url);
+          }
+          deferred.reject(err);
+        }
+      );
+      return deferred.promise;
+    })
   }
 
   return {
 
-    registerAuthentication: registerAuthentication
+    registerAuthentication: registerAuthentication,
+    register401Handler: register401Handler
   };
 
 });
