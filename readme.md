@@ -252,7 +252,7 @@ Användaruppgifterna (clientId & clientSecret nedan) erhålls av Skogsstyrelsen,
 
 ```json
 "HistogramApi": {
-  ...
+  "url": "https://api.skogsstyrelsen.se/sksapi/v0.1/Raster/Scl/HistogramDateSummary",
   "auth": {
     "enabled": true,
     "authority": "https://auth.skogsstyrelsen.se/connect/token",
