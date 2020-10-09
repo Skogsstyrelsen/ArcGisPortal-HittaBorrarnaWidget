@@ -202,7 +202,7 @@ Bildtjänsten med Sentinel-2data kräver inloggning. För att slippa ange inlogg
 HittaBorranaWidget fungerar som både "off-panel" och "in-panel" widget. Den fungerar även som "on-screen" widget. När man lagt till widgeten får man direkt möjlighet att konfigurera den.
 När man laddar ner widgeten från GitHub följer det med en config.json som delvis är infylld och anpassad för förändringsanalysen som avser barkborrar. Konfigurationen har JSON struktur.
 
-#### Parametrar att konfigurera:
+#### Parametrar att konfigurera
 
 - InputLayer - sökväg till ArcGIS REST tjänst med Sentinel-2 data.<br>Om man inte går via egen proxy anges:
 
@@ -225,7 +225,7 @@ När man laddar ner widgeten från GitHub följer det med en config.json som del
 
 ```json
 "HistogramApi": {
-  "url": "https//apitest.skogsstyrelsen.se/skshejsanhoppsan/v1/",
+  "url": "https://api.skogsstyrelsen.se/sksapi/v0.1/Raster/Scl/HistogramDateSummary",
   "auth": {
     "enabled": false,
     "authority": "",
@@ -237,7 +237,7 @@ När man laddar ner widgeten från GitHub följer det med en config.json som del
 }
 ```
 
-#### Autentisering:
+#### Autentisering
 
 Skogsstyrelsen API använder protokollet OAuth 2.0 för behörighetskontroll av alla anrop. För att kunna använda Skogsstyrelsen API måste en anropande applikation finnas registrerad i Skogsstyrelsen API. En registrerad applikation erhåller ett servicekonto med en unikt klient-id (ClientId) och en tillhörande privat nyckel (ClientSecret).
 
@@ -264,7 +264,7 @@ Användaruppgifterna (clientId & clientSecret nedan) erhålls av Skogsstyrelsen,
 }
 ```
 
-#### Förifyllda parametrar:
+#### Förifyllda parametrar
 
 - analysisRasterFunctions - Rasterfunktioner i tjänsten med Sentinel-2 data som används vid förändringsanalysen.<br>Ger användaren möjlighet att välja vilken förändringsanalys som ska användas i widgeten (se [Kartlager](#kartlager)).
 
@@ -354,7 +354,7 @@ För varje rasterfunktion som ska vara tillgänglig anges:
 
 <img title="ValbaraPrametrar" src="https://user-images.githubusercontent.com/26382924/84248553-e435ae00-ab09-11ea-8824-41985439008c.PNG" width="650px">
 
-#### Method:
+#### Method
 
 Parametern styr vilken typ av data som returneras till klienten
 
@@ -376,7 +376,7 @@ Parametern styr vilken typ av data som returneras till klienten
   </tr>
 </table>
 
-#### Translation:
+#### Translation
 
 Parametern gör det möjligt att välja om de bilder som ingår i analysen ska matchas till varandra geometriskt. Data från Sentinel-2 dras tyvärr med en geometrisk förskjtning mellan bilderna som oftast gör att translatikonen är nödvändig. Detta förbättrar skärpan i analysen.
 
@@ -385,20 +385,20 @@ Parametern gör det möjligt att välja om de bilder som ingår i analysen ska m
 - _Off_
   - Ingen geometrisk korrigering utförs.
 
-#### Vegetation Index:
+#### Vegetation Index
 
 Parametern styr vad som ska beräknas i varje satellitbild och som sedan skillnaderna ska baseras på
 
 - _NDVI_ (Default) Normalised Difference Vegetation Index
 - _SAVI_ Soil Adjusted Vegetation Index
 
-#### Soil:
+#### Soil
 
 Detta värde används endast om _Vegetation Index_ ovan har angivits till SAVI
 
 - Decimalt värde mellan 0.0 och 1.0. Oftast hamnar ett bra värde mellan 0.3 och 0.5
 
-#### Radnorm:
+#### Radnorm
 
 Pixelvärdena i satellitdatat kan skilja sig åt något även om det i praktiken inte finns några större skillnader mellan objekten på marken. Oftast beror detta på skillnader i atmosfäriska som ljuset ska passera genom innan det når sensorn i satelliten, men det kan också bero på olika kalibreringar som satellitägaren utfört. Parametern _Radnorm_ kompenserar för dessa skillnader.
 
@@ -410,14 +410,14 @@ Pixelvärdena i satellitdatat kan skilja sig åt något även om det i praktiken
 - _None_
   - Ingen radiometrisk kompensation sker
 
-#### NIR Band:
+#### NIR Band
 
 För en korrekt beräkning av NDVI och SAVI måste rätt spektralband används. För en korrekt beräkning av dessa vegetationsindex måste _B8-NIR_ och _B4-RED_ användas (se tabellen ovan). Värdena bör inte ändras.
 
 - Numeriskt värde mellan 1 och 12. (Default 4.)
 - Band 13 i bildtjänsten ska aldrig användas. Det innehåller en tematisk klassning av molnen.
 
-#### Red Band:
+#### Red Band
 
 - Numeriskt värde mellan 1 och 12. (Default 3.)
 - Band 13 i bildtjänsten ska aldrig användas. Det innehåller en tematisk klassning av molnen.
