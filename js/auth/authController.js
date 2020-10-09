@@ -1,13 +1,10 @@
 define([
-  "dojo/_base/declare",
-  "dojo/Evented",
-  "dojo/request",
   "dojo/request/registry",
   "dojo/request/xhr",
   "dojo/Deferred",
   "./jwtdecode",
   "dojo/domReady!"
-], function (declare, Evented, request, registry, xhr, Deferred, jwtDecode) {
+], function (registry, xhr, Deferred, jwtDecode) {
 
 
 
@@ -35,9 +32,15 @@ define([
     } else {
       opts.headers = {
         Authorization: 'Bearer ' + token
-      }
+      };
     }
-    return _makeRequest(url, opts)
+    return _makeRequest(url, opts);
+  }
+
+  function _removeOldToken() {
+    if (_storageEnabled()) {
+      sessionStorage.removeItem("access_token");
+    }
   }
 
   function _getExistingToken() {
@@ -94,6 +97,7 @@ define([
   }
 
   function registerAuthentication(config) {
+    _removeOldToken();
     _checkRequiredKeys(config);
     registry.register(new RegExp(config.url), function (url, opts) {
       var deffered = new Deferred();
@@ -105,9 +109,9 @@ define([
           if (_storageEnabled()) {
             sessionStorage.access_token = res.access_token;
           } else {
-            console.warn("Session storage ej tillgängligt, autentisering sker istället per anrop")
+            console.warn("Session storage ej tillgängligt, autentisering sker istället per anrop");
           }
-          return _forwardAuthenticatedRequest(url, opts, res.access_token)
+          return _forwardAuthenticatedRequest(url, opts, res.access_token);
         }, function (err) {
           console.error(err);
           deffered.reject("Misslyckad autentisering, kunde inte skapa token");
@@ -133,7 +137,7 @@ define([
         }
       );
       return deferred.promise;
-    })
+    });
   }
 
   return {

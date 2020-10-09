@@ -1,12 +1,12 @@
 define([
   "dojo/_base/declare",
   "dojo/Evented",
-  "dojo/dom",
   "./Data/HistogramService",
+  "./Data/HistogramUtils",
   "./UIComponents/UIColumnChart",
   "dojo/on",
   "dojo/domReady!"
-], function (declare, Evented, dom, HistogramService, UIColumnChart) {
+], function (declare, Evented, HistogramService, HistogramUtils, UIColumnChart) {
 
   return declare(Evented, {
     chartId: null,
@@ -67,7 +67,7 @@ define([
 
     createAttributeSelect: function () {
       var _this = this;
-      var options = HistogramService.getMapping();
+      var options = HistogramUtils.getMapping();
       var select = $("<select></select>").attr("name", "attributeSelect");
       $.each(options, function (index, option) {
         select.append($("<option></option>").attr("value", option.value).text(option.label));

@@ -43,8 +43,8 @@ define([
         'selectedTableRow': 'selectedColumn'
       };
 
-      var utils = new HistogramUtils();
-      var displayName = utils.getLabel(this.dataAttribute);
+
+      var displayName = HistogramUtils.getLabel(this.dataAttribute);
       this.data = new google.visualization.DataTable();
       this.data.addColumn('date', 'Datum');
       this.data.addColumn('number', displayName);

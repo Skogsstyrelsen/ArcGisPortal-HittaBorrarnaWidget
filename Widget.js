@@ -8,7 +8,6 @@ define([
     './js/LayerListController',
     './js/RasterfunctionController',
     './js/auth/authController',
-
     "https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/js/calcite-web.min.js",
     "jimu/loaderplugins/jquery-loader!https://code.jquery.com/jquery-3.3.1.min.js",
     'xstyle/css!https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/css/calcite-web.min.css',
@@ -25,7 +24,6 @@ define([
     LayerListController,
     RasterfunctionController,
     AuthController,
-
     Calcite,
     $) {
     //To create a widget, you need to derive from BaseWidget.
