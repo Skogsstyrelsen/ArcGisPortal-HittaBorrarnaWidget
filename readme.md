@@ -225,7 +225,7 @@ När man laddar ner widgeten från GitHub följer det med en config.json som del
 
 ```json
 "HistogramApi": {
-  "url": "https://api.skogsstyrelsen.se/sksapi/v0.1/Raster/Scl/HistogramDateSummary",
+  "url": "https://api.skogsstyrelsen.se/sksapi/v0.1/",
   "auth": {
     "enabled": false,
     "authority": "",
