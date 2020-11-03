@@ -5,7 +5,7 @@ define([
 
   dataAttributeMapping = [{
       label: 'Summa bra data',
-      value: 'sumBraData'
+      value: 'summaBraData'
     },
     {
       label: 'Antal indexrutor',
@@ -17,11 +17,11 @@ define([
     },
     {
       label: 'Medel bra data',
-      value: 'avgBraData'
+      value: 'genomsnittligBraData'
     },
     {
       label: 'Täckning',
-      value: 'coverage'
+      value: 'tackning'
     }
   ];
 

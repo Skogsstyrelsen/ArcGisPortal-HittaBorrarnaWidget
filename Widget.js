@@ -25,7 +25,8 @@ define([
     RasterfunctionController,
     AuthController,
     Calcite,
-    $) {
+    $
+  ) {
     //To create a widget, you need to derive from BaseWidget.
     return declare([BaseWidget], {
 

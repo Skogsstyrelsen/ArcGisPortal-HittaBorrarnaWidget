@@ -14,7 +14,7 @@ define([
     elementId: null,
     fillColor: "#133292",
     strokeColor: "#133292",
-    dataAttribute: "sumBraData",
+    dataAttribute: "summaBraData",
     selectedItem: null,
 
     constructor: function (elementId, data) {
