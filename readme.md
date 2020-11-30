@@ -63,7 +63,7 @@ Skogsstyrelsen tar inte ansvar för att resultatet av en utförd förändringsan
 
 - ArcGIS portal 10.7.1 med Web App Builder.
 - Web App Builder Developer Edition ver 2.12 för att skapa fristående appliktioner eller anpassa widget.
-- API nyckel för Skogsstyrelsens webapi som används av Bildväljaren. <a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/bestalla-anvandarkonto-api/"> Beställ API nyckel på Skogsstyrelsens webbplats.</a>
+- API nyckel för Skogsstyrelsens webapi med information om moln i bilderna och som används av Bildväljaren. <a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/bestalla-anvandarkonto-api/"> Beställ API nyckel på Skogsstyrelsens webbplats.</a>
 - Användarnamn och lösenord för den ArcGIS bildtjänst med Sentineldata som används i widgeten. <a href="https://skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/skaffa-anvandarkonto/"> Beställ användarkonto på Skogsstyrelsens webbplats</a>.
 
 ## Indata
