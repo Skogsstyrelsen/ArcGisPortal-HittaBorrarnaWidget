@@ -70,7 +70,7 @@ Skogsstyrelsen tar inte ansvar för att resultatet av en utförd förändringsan
 
 ### Bildtjänsten Sentinel2_2_0
 
-<p>Analysen bygger på data från satelliten Sentinel-2. Dessa data laddas dagligen ner till Skogsstyrelsen och görs tillgängliga via en bildtjänst med namnet Sentinel2_2_0. Som regel är nya uppdaterade data från gårdagens satellitpassager över Sverige på plats kl 09:30 dagen efter. Informationen om andelen moln är då samtidigt uppdaterade i en databas.</p>
+<p>Analysen bygger på data från satelliten Sentinel-2. Dessa data laddas dagligen ner till Skogsstyrelsen och görs tillgängliga via en bildtjänst med namnet Sentinel2_2_0. Som regel är nya uppdaterade data från gårdagens satellitpassager över Sverige på plats kl 20:00 dagen efter. Informationen om andelen moln är då samtidigt uppdaterade i en databas.</p>
 <p>Spektralbanden från Sentinel-2 är i tjänsten ordnade i en ordningsföljd som i huvudsak beror av pixelstorleken i originaldata.<br>Bildtjänsten Sentinel2_2_0 har följande bandordning:
 <table style="width:100%">
   <tr>
